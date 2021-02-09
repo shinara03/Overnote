@@ -29,13 +29,16 @@ class SessionForm extends React.Component {
           {/* <h1>Evernote</h1>
           <h2>Remember everything important</h2> */}
           <div>
-            <label>Email address
-              <input type="text" value={this.state.email} onChange={this.update('email')} />
-            </label>
+              <input type="text" 
+                    value={this.state.email} 
+                    placeholder="Email address"
+                    onChange={this.update('email')} />
             <br/>
-            <label>Password
-              <input type="text" value={this.state.password} onChange={this.update('password')} />
-            </label>
+              <input type="text" 
+                    value={this.state.password} 
+                    placeholder="Password"
+                    onChange={this.update('password')} />
+            <br/>
             <input type='submit' value={this.props.formType} />
           </div>
         </form>
