@@ -7,9 +7,10 @@ const App = () => {
   return (
     <div>
       {/* <h1>From App</h1> */}
-      <GreetingContainer />
-      <Route path="/login" component={LoginFormContainer} />
-      <Route path="/signup" component={SignupFormContainer} />
+      {/* <GreetingContainer /> */}
+      <Route exact path="/user" component={GreetingContainer} />
+      <Route exact path="/login" component={LoginFormContainer} />
+      <Route exact path="/signup" component={SignupFormContainer} />
     </div>
   )
 }
