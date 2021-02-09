@@ -1,5 +1,8 @@
-class Api::SessionController < ApplicationController
+require 'byebug'
+
+class Api::SessionsController < ApplicationController
   def create
+    #debugger
     @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
@@ -14,7 +17,8 @@ class Api::SessionController < ApplicationController
   end
 
   def destroy
-    if(logged_in?)
+    debugger
+    if (logged_in?)
       logout
       render json: {}
     else 
