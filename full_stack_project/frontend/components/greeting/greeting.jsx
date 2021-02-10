@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Greeting = (props) => {
+
   const welcomeMessage = () => {
     return (
       <div>
@@ -14,7 +15,7 @@ const Greeting = (props) => {
   const links = () => {
     return (
       <div>
-        <Link to='/login'>Sign in</Link>
+        <Link to='/login'>Log in</Link>
         <br />
         <Link to='/signup'>Create Account</Link>
       </div>

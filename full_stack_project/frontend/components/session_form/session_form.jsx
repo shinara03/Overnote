@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-div">
         <form onSubmit={this.handleSubmit}>
           {/* <h1>Evernote</h1>
           <h2>Remember everything important</h2> */}
