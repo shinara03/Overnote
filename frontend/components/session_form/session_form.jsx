@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -21,8 +22,21 @@ class SessionForm extends React.Component {
     return e => this.setState({[field]: e.target.value})
   }
 
-
   render() {
+
+    let footer;
+    if (this.props.formType === 'login') {
+      footer = <div>
+        <p>Don't have an account?</p>
+        <Link to='/signup'>Create account</Link>
+      </div>
+    } else {
+      footer = <div>
+        <p>Already have an account?</p>
+        <Link to='/login'>Sign in</Link>
+      </div>
+    }
+
     return (
       <div className='session-page'>
         <div className='session-wrapper'>
@@ -42,9 +56,12 @@ class SessionForm extends React.Component {
                       placeholder="Password"
                       onChange={this.update('password')} />
               <br/>
-              <input className='session-button' type='submit' value={this.props.formType} />
+              <input className='session-button' type='submit' value="Continue" />
             </div>
           </form>
+          <div className= 'session-footer'>
+            {footer}
+          </div>
         </div>
       </div>
     )

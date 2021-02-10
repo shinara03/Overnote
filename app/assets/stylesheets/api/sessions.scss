@@ -17,12 +17,11 @@
   padding: 62.12px 99px 48px;
   width: 314px;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, Hevetica, sans-seif;
  }
 
  .session-heading {
-  text-align: center;
-  font-family: Arial, Hevetica, sans-seif;
-
   h1 {
     font-size: 40px;
     font-weight: bold;
@@ -63,3 +62,16 @@
   background-color: #008f26;
   border-color: #008f26;
 }
+
+.session-footer {
+  font-size: 16px;
+  line-height: 18px;
+  // color: #00a82d;
+  
+  p {
+    font-size: 14px;
+    color: #737373;
+    margin: 0 0 10px 0;
+  }
+}
+
