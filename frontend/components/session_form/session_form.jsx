@@ -32,6 +32,7 @@ class SessionForm extends React.Component {
       </div>
     } else {
       footer = <div>
+        <span>By creating an account, you are agreeing to our Terms of Service and Privacy Policy</span>
         <p>Already have an account?</p>
         <Link to='/login'>Sign in</Link>
       </div>
@@ -41,7 +42,7 @@ class SessionForm extends React.Component {
       <div className='session-page'>
         <div className='session-wrapper'>
           <div className='session-heading'>
-          <h1>Evernote</h1>
+          <h1>Overnote</h1>
           <h2>Remember everything important</h2>
           </div>
           <form className='session-form' onSubmit={this.handleSubmit}>

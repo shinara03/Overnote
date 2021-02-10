@@ -67,11 +67,16 @@
   font-size: 16px;
   line-height: 18px;
   // color: #00a82d;
-  
+  span {
+    font-size: 13px;
+     color: #a6a6a6;
+     margin: 0 5px;
+  }
+
   p {
     font-size: 14px;
     color: #737373;
-    margin: 0 0 10px 0;
+    margin: 30px 0 10px 0;
   }
 }
 
