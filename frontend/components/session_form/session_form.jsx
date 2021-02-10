@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 import DemoUserContainer from '../demoUser/demoUser_container'
 
 class SessionForm extends React.Component {
@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history);
+    this.props.processForm(user).then(() => this.props.history.push('/'));
   }
 
   update(field) {
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
       <div className='session-page'>
         <div className='session-wrapper'>
           <div className='session-heading'>
-  
+            <img src={window.octopusURL} />
             <h1>Overnote</h1>
             <h2>Remember everything important</h2>
             <DemoUserContainer />
@@ -72,4 +72,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
