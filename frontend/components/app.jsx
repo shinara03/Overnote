@@ -8,8 +8,6 @@ import Navbar_container from './navbar/navbar_container';
 const App = () => {
   return (
     <div>
-      {/* <h1>From App</h1> 
-      <h3>from app</h3> */}
       {/* <GreetingContainer /> */}
       <Route exact path='/' component={Navbar_container}/>
       <Route exact path="/home" component={GreetingContainer} />
