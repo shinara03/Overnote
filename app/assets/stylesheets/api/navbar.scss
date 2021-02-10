@@ -1,0 +1,42 @@
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 80px;
+  padding: 0 10%;
+  font-family: Arial, Hevetica, sans-seif;
+}
+
+.navBar-logo{
+  display: flex;
+  flex-direction: row;
+  // border: 1px solid pink;
+  align-self: center;
+
+  
+  h1 {
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+}
+
+.navBar-oct {
+  width: 45px;
+  height: 45px;
+}
+
+.navBar-redirect{
+  align-self: center;
+}
+.navBar-link {
+  text-decoration: none;
+  color: black;
+
+  margin: 5px 5px;
+}
+
+.navBar-link:hover {
+  color: #00a82d;
+}
