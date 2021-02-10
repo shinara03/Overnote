@@ -2,18 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .session-page {
-   background-color: #EAF8F0;
+  background-color: #EAF8F0;
   display: flex;
   justify-content: center;
   height: 100vh;
  }
 
  .session-wrapper {
-  background-color: white;
+  background-color: #ffffff;
   align-self: center;
+  // border: black solid 2px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 62.12px 99px 48px;
+  width: 314px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
  }
 
  .session-heading {
-   text-align: center;
+  text-align: center;
+  font-family: Arial, Hevetica, sans-seif;
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin: 30px 0 44px 0;
+  }
  }
 
+.session-form {
+  // border: solid red 2px;
+}
+.session-inputs {
+  border-radius: 7px;
+  border: 1px solid #e6e6e6;
+  padding: 12px 16px;
+  width: 100%;
+  margin: 0 0 5px 0;
+  line-height: 19px;
+  font-size: 16px;
+}
+
+.session-button {
+  background-color: #01A82D;
+  border-color: #01A82D;
+  width: 100%;
+  border-radius: 7px;
+  padding: 5px 0;
+  line-height: 2.75;
+  color: white;
+  margin-top: 7px;
+  margin-bottom: 14px;
+  border-style: none;
+}

@@ -28,21 +28,21 @@ class SessionForm extends React.Component {
         <div className='session-wrapper'>
           <div className='session-heading'>
           <h1>Evernote</h1>
-          <p className='tagline'>Remember everything important</p>
+          <h2>Remember everything important</h2>
           </div>
           <form className='session-form' onSubmit={this.handleSubmit}>
-            <div className='session-form-inputs'>
-                <input type="text" 
+            <div>
+                <input className="session-inputs" type="text" 
                       value={this.state.email} 
                       placeholder="Email address"
                       onChange={this.update('email')} />
               <br/>
-                <input type="text" 
+                <input className='session-inputs' type="text" 
                       value={this.state.password} 
                       placeholder="Password"
                       onChange={this.update('password')} />
               <br/>
-              <input type='submit' value={this.props.formType} />
+              <input className='session-button' type='submit' value={this.props.formType} />
             </div>
           </form>
         </div>
