@@ -13,8 +13,5 @@
  *= require_tree .
  *= require_self
  */
- .session-div {
-  height: 1000px;
-  width: 2000px;
-  background-color: #EAF8F0;
- }
+ 
+@import "api/sessions.scss";
