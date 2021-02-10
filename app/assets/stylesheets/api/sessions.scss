@@ -43,6 +43,10 @@
   font-size: 16px;
 }
 
+.session-inputs:focus {
+    outline-color: #dff2e6;
+}
+
 .session-button {
   background-color: #01A82D;
   border-color: #01A82D;
@@ -86,7 +90,12 @@
   border: solid 1px #d0d0d0;
   background-color: white;
   width: 100%;
-  line-height: 3.0;
+  line-height: 2.5;
   margin-bottom: 10px;
+  color: #757575;
+  font-size: 14px;
 }
 
+// .session-link {
+//   text-decoration: none;
+// }

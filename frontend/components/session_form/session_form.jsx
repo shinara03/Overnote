@@ -43,6 +43,7 @@ class SessionForm extends React.Component {
       <div className='session-page'>
         <div className='session-wrapper'>
           <div className='session-heading'>
+  
             <h1>Overnote</h1>
             <h2>Remember everything important</h2>
             <DemoUserContainer />
