@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DemoUserContainer from '../demoUser/demoUser_container'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,12 +10,12 @@ class SessionForm extends React.Component {
       password: ""
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
+    const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.history);
   }
 
@@ -42,8 +43,9 @@ class SessionForm extends React.Component {
       <div className='session-page'>
         <div className='session-wrapper'>
           <div className='session-heading'>
-          <h1>Overnote</h1>
-          <h2>Remember everything important</h2>
+            <h1>Overnote</h1>
+            <h2>Remember everything important</h2>
+            <DemoUserContainer />
           </div>
           <form className='session-form' onSubmit={this.handleSubmit}>
             <div>
