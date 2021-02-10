@@ -27,15 +27,15 @@ class SessionForm extends React.Component {
 
     let footer;
     if (this.props.formType === 'login') {
-      footer = <div>
+      footer = <div> 
         <p>Don't have an account?</p>
-        <Link to='/signup'>Create account</Link>
+        <Link className='account-link' to='/signup'>Create account</Link>
       </div>
     } else {
       footer = <div>
         <span>By creating an account, you are agreeing to our Terms of Service and Privacy Policy</span>
         <p>Already have an account?</p>
-        <Link to='/login'>Sign in</Link>
+        <Link className='account-link' to='/login'>Sign in</Link>
       </div>
     }
 
@@ -47,6 +47,7 @@ class SessionForm extends React.Component {
             <h1>Overnote</h1>
             <h2>Remember everything important</h2>
             <DemoUserContainer />
+            <h3 className='horizontal-line'><span>or</span></h3>
           </div>
           <form className='session-form' onSubmit={this.handleSubmit}>
             <div>
