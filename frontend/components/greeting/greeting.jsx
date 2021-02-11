@@ -24,12 +24,28 @@ const Greeting = (props) => {
   // return props.currentUser ? welcomeMessage() : links();
   return (
       <div className='sidebar-user'>
-        <img className='sidebar-icon' src={window.sidebarIconURL} />
-        <h2>{props.currentUser.email}</h2>
-        <i className='arrow'></i>
+          <button className='drop-btn'>
+            <img className='sidebar-icon' src={window.sidebarIconURL} />
+            <h2>{props.currentUser.email}</h2>
+            <i className='arrow'></i>
+          </button>
+        <div id='sb-dropdown' className='dropdown-content'>
+            <button className='logout-btn' onClick={props.logout}>Sign out {props.currentUser.email}</button>
+        </div>
         {/* <button onClick={props.logout}>Sign out</button> */}
       </div>
   )
 }
 
 export default Greeting
+
+
+
+//   < div class="dropdown" >
+//        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+//        <div id="myDropdown" class="dropdown-content">
+//            <a href="#">Link 1</a>
+//             <a href="#">Link 2</a>
+//             <a href="#">Link 3</a>
+//        </div>
+// </div >

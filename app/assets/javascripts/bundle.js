@@ -352,15 +352,30 @@ var Greeting = function Greeting(props) {
   // return props.currentUser ? welcomeMessage() : links();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sidebar-user"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "drop-btn"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "sidebar-icon",
     src: window.sidebarIconURL
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "arrow"
-  }));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "sb-dropdown",
+    className: "dropdown-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "logout-btn",
+    onClick: props.logout
+  }, "Sign out ", props.currentUser.email)));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Greeting);
+/* harmony default export */ __webpack_exports__["default"] = (Greeting); //   < div class="dropdown" >
+//        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+//        <div id="myDropdown" class="dropdown-content">
+//            <a href="#">Link 1</a>
+//             <a href="#">Link 2</a>
+//             <a href="#">Link 3</a>
+//        </div>
+// </div >
 
 /***/ }),
 
