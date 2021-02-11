@@ -57,20 +57,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // let emailError;
-    // let passwordError;
-    // let combiError;
-
-    // this.props.errors.map(error => {
-    //   if (error === "Invalid email or password") {
-    //     combiError = error;
-    //   } else if (error.toLowerCase().includes('email')) {
-    //     emailError = error;
-    //   } else {
-    //     passwordError = error;
-    //   }
-    // })
-   
 
     return (
       <div className='session-page'>

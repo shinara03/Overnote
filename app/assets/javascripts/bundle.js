@@ -341,7 +341,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ErrorPage = function ErrorPage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "epage-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "epage-img",
+    src: window.errorPage
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ErrorPage);
@@ -617,18 +622,6 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // let emailError;
-      // let passwordError;
-      // let combiError;
-      // this.props.errors.map(error => {
-      //   if (error === "Invalid email or password") {
-      //     combiError = error;
-      //   } else if (error.toLowerCase().includes('email')) {
-      //     emailError = error;
-      //   } else {
-      //     passwordError = error;
-      //   }
-      // })
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
