@@ -643,7 +643,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('email')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-inputs",
-        type: "text",
+        type: "password",
         value: this.state.password,
         placeholder: "Password",
         onChange: this.update('password')
