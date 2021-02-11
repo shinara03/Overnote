@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class NavBar extends React.Component {
-
-  render() {
+const NavBar = () => {
     return (
       <div className='navBar'>
           <Link className='navBar-logo'to='/'>
@@ -16,6 +14,5 @@ class NavBar extends React.Component {
         </div>
       </div>
     )
-  }
 }
 export default NavBar;

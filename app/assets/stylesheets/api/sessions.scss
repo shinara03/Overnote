@@ -116,6 +116,11 @@
   background-color: #f8f8f8;
 }
 
+.demo-button:focus {
+  outline-color: #d0d0d0
+}
+
+
 .account-link {
   text-decoration: none;
   color: #00a82d;
