@@ -1,0 +1,38 @@
+.sidebar {
+  background: black;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  font-family: Verdana, sans-serif;;
+}
+
+.sidebar-user {
+  color: white;
+  height: 56px;
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-icon {
+  height: 25px;
+  width: 25px;
+  align-self: center;
+  margin: 10px 10px;
+}
+
+.sidebar-user h2 {
+  align-self: center;
+  font-size: 13px;
+  color: #CCCCCC;
+}
+
+.arrow {
+  margin: 10px 10px;
+  border: solid 20px #CCCCCC;
+  display: inline-block;
+  border-width: 0 2px 2px 0;
+  padding: 2px;
+  transform: rotate(45deg);
+  align-self: center;
+}

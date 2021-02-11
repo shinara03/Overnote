@@ -350,9 +350,14 @@ var Greeting = function Greeting(props) {
   //   )
   // }
   // return props.currentUser ? welcomeMessage() : links();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "welcome, ", props.currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: props.logout
-  }, "Sign out"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-user"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "sidebar-icon",
+    src: window.sidebarIconURL
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "arrow"
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Greeting);

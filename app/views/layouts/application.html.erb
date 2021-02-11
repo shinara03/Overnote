@@ -4,7 +4,7 @@
     <title>FullStackProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('session/octopus.png') %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -12,6 +12,9 @@
   <body>
       <script type="text/javascript">
         window.octopusURL = "<%= image_url('session/octopus.png') %>";
+      </script>
+      <script type="text/javascript">
+        window.sidebarIconURL = "<%= image_url('session/sidebar_icon.png') %>";
       </script>
     <%= yield %>
   </body>

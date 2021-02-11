@@ -23,9 +23,11 @@ const Greeting = (props) => {
 
   // return props.currentUser ? welcomeMessage() : links();
   return (
-      <div>
-        <h2>welcome, {props.currentUser.email}</h2>
-        <button onClick={props.logout}>Sign out</button>
+      <div className='sidebar-user'>
+        <img className='sidebar-icon' src={window.sidebarIconURL} />
+        <h2>{props.currentUser.email}</h2>
+        <i className='arrow'></i>
+        {/* <button onClick={props.logout}>Sign out</button> */}
       </div>
   )
 }
