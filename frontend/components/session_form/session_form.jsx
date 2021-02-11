@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import DemoUserContainer from '../demoUser/demoUser_container'
 
 class SessionForm extends React.Component {
@@ -11,7 +11,9 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -23,21 +25,52 @@ class SessionForm extends React.Component {
     return e => this.setState({[field]: e.target.value})
   }
 
-  render() {
-
-    let footer;
+  getFooter() {
+    let footer
     if (this.props.formType === 'login') {
-      footer = <div> 
+      footer = <div>
         <p>Don't have an account?</p>
-        <Link className='account-link' to='/signup'>Create account</Link>
+        <h3 className='account-link' onClick={() => {
+          this.props.clearErrors();
+          this.props.history.push('/signup')
+        }}>Create account</h3>
       </div>
     } else {
       footer = <div>
         <span>By creating an account, you are agreeing to our Terms of Service and Privacy Policy</span>
         <p>Already have an account?</p>
-        <Link className='account-link' to='/login'>Sign in</Link>
+        <h3 className='account-link' onClick={() => {
+          this.props.clearErrors();
+          this.props.history.push('/login')
+        }}>Sign in</h3>
       </div>
     }
+    return footer;
+  }
+
+  renderError() {
+    let errors = this.props.errors.map((error,idx) => {
+      return <p key={idx} className='session-errors'>{error}</p> 
+    })
+
+    return errors;
+  }
+
+  render() {
+    // let emailError;
+    // let passwordError;
+    // let combiError;
+
+    // this.props.errors.map(error => {
+    //   if (error === "Invalid email or password") {
+    //     combiError = error;
+    //   } else if (error.toLowerCase().includes('email')) {
+    //     emailError = error;
+    //   } else {
+    //     passwordError = error;
+    //   }
+    // })
+   
 
     return (
       <div className='session-page'>
@@ -56,18 +89,24 @@ class SessionForm extends React.Component {
                       placeholder="Email address"
                       onChange={this.update('email')} />
               <br/>
+                {/* <div className="session-errors">{emailError}</div> */}
                 <input className='session-inputs' type="text" 
                       value={this.state.password} 
                       placeholder="Password"
                       onChange={this.update('password')} />
               <br/>
+              {/* <div className="session-errors">{passwordError}</div>
+              <div className="session-errors">{combiError}</div> */}
+              {this.renderError()}
               <input className='session-button' type='submit' value="Continue" />
             </div>
           </form>
           <div className= 'session-footer'>
-            {footer}
+            {this.getFooter()}
           </div>
         </div>
+        <div className='session-terms'>Terms of Service | Privacy Policy | 
+                      Copyright 2021 Lena Shin. All rights reserved.</div>
       </div>
     )
   }

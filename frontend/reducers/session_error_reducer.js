@@ -1,12 +1,13 @@
-import {RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS} from '../actions/session_actions'
+import {CLEAR_ERRORS, RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS} from '../actions/session_actions'
 
-const sessionErrorReducer = (state={}, action) => {
+const sessionErrorReducer = (state=[], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:
-      let session_errors = action.errors;
-      return session_errors;
+      return action.errors;
     case RECEIVE_CURRENT_USER:
+      return [];
+    case CLEAR_ERRORS:
       return [];
     default: 
       return state;

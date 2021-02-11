@@ -13,7 +13,7 @@ class DemoUser extends React.Component {
   }
   handleClick(e) {
     const demo = Object.assign({}, this.state);
-    this.props.demoLogin(demo).then(() => this.props.history.push('/home'));
+    this.props.demoLogin(demo);
   }
 
   render() {
