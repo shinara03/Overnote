@@ -10,5 +10,5 @@ User.destroy_all
 
 #Users
 user1 = User.create({email: 'shin1@gmail.com', password: "123456"})
-user2 = User.create({email: 'shin2@gmail.com', password: "234567"})
-user3 = User.create({email: 'shin3@gmail.com', password: "567891"})
+user2 = User.create({email: 'Lena@gmail.com', password: "123456"})
+user3 = User.create({email: 'helloWorld@gmail.com', password: "123456"})
