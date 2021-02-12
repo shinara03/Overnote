@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter} from 'react-router-dom';
-import DemoUserContainer from '../demoUser/demoUser_container'
+import DemoUserContainer from '../demoUser/demoUser_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -91,8 +91,8 @@ class SessionForm extends React.Component {
             {this.getFooter()}
           </div>
         </div>
-        <div className='session-terms'>Terms of Service | Privacy Policy | 
-                      Copyright 2021 Lena Shin. All rights reserved.</div>
+        {/* <div className='session-terms'>Terms of Service | Privacy Policy | 
+                      Copyright 2021 Lena Shin. All rights reserved.</div> */}
       </div>
     )
   }

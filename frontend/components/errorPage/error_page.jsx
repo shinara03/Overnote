@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from '../navbar/navbar'
+import NavBarContainer from '../splash/navbar/navbar_container'
 
 const ErrorPage = () => {
   return (
     <div>
-      <NavBar />
+      <NavBarContainer />
       <div className='epage-wrapper'>
         <img className='epage-img' src={window.errorPage} />
       </div>
