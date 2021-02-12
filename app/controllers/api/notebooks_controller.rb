@@ -26,7 +26,7 @@ class Api::NotebooksController < ApplicationController
     @notebook = current_user.notebooks.find_by(id: params[:id])
     @notebook.destroy
 
-    render json: @notebook.id
+    render 'api/notebooks/show'
   end
 
   def show

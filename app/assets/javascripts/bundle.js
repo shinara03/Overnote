@@ -86,6 +86,98 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/notebook_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/notebook_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_NOTEBOOK, RECEIVE_NOTEBOOKS, REMOVE_NOTEBOOK, RECEIVE_NOTEBOOK_ERRORS, receiveNotebooks, receiveNotebook, removeNotebook, receiveNotebookErrors, fetchNotebooks, fetchNotebook, createNotebook, updateNotebook, deleteNotebook */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NOTEBOOK", function() { return RECEIVE_NOTEBOOK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NOTEBOOKS", function() { return RECEIVE_NOTEBOOKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_NOTEBOOK", function() { return REMOVE_NOTEBOOK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NOTEBOOK_ERRORS", function() { return RECEIVE_NOTEBOOK_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebooks", function() { return receiveNotebooks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebook", function() { return receiveNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeNotebook", function() { return removeNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebookErrors", function() { return receiveNotebookErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebooks", function() { return fetchNotebooks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebook", function() { return fetchNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNotebook", function() { return createNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateNotebook", function() { return updateNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteNotebook", function() { return deleteNotebook; });
+/* harmony import */ var _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/notebook_api_util */ "./frontend/util/notebook_api_util.js");
+
+var RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
+var RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
+var REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
+var RECEIVE_NOTEBOOK_ERRORS = "RECEIVE_NOTEBOOK_ERRORS";
+var receiveNotebooks = function receiveNotebooks(notebooks) {
+  return {
+    type: RECEIVE_NOTEBOOKS,
+    notebooks: notebooks
+  };
+};
+var receiveNotebook = function receiveNotebook(notebook) {
+  return {
+    type: RECEIVE_NOTEBOOK,
+    notebook: notebook
+  };
+};
+var removeNotebook = function removeNotebook(notebook) {
+  return {
+    type: REMOVE_NOTEBOOK,
+    notebook: notebook
+  };
+};
+var receiveNotebookErrors = function receiveNotebookErrors(errors) {
+  return {
+    type: RECEIVE_NOTEBOOK_ERRORS,
+    errors: errors
+  };
+};
+var fetchNotebooks = function fetchNotebooks() {
+  return function (dispatch) {
+    return _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchNotebooks"]().then(function (notebooks) {
+      return dispatch(receiveNotebooks(notebooks));
+    });
+  };
+};
+var fetchNotebook = function fetchNotebook(id) {
+  return function (dispatch) {
+    return _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchNotebook"](id).then(function (notebook) {
+      return dispatch(receiveNotebook(notebook));
+    });
+  };
+};
+var createNotebook = function createNotebook(notebook) {
+  return function (dispatch) {
+    return _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__["createNotebook"](notebook).then(function (notebook) {
+      return dispatch(receiveNotebook(notebook));
+    }, function (error) {
+      return dispatch(receiveNotebookErrors(error.responseJSON));
+    });
+  };
+};
+var updateNotebook = function updateNotebook(notebook) {
+  return function (dispatch) {
+    return _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__["updateNotebook"](notebook).then(function (notebook) {
+      return dispatch(receiveNotebook(notebook));
+    });
+  };
+};
+var deleteNotebook = function deleteNotebook(notebook) {
+  return function (dispatch) {
+    return _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteNotebook"](notebook).then(function (notebook) {
+      return dispatch(removeNotebook(notebook));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -819,10 +911,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
-/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/notebook_api_util */ "./frontend/util/notebook_api_util.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./actions/notebook_actions */ "./frontend/actions/notebook_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -843,21 +939,29 @@ document.addEventListener("DOMContentLoaded", function () {
         id: window.currentUser.id
       }
     };
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])(preloadedState);
     delete window.currentUser;
   } else {
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
   }
 
   var root = document.getElementById("root");
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_5__["default"], {
     store: store
   }), root); //Testing
 
   window.APIUtil = _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__;
+  window.nbUtil = _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_3__;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["login"];
+  window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["login"];
+  window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["logout"];
+  window.fetchNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["fetchNotebook"];
+  window.fetchNotebooks = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["fetchNotebooks"];
+  window.createNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["createNotebook"];
+  window.updateNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["updateNotebook"];
+  window.deleteNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["deleteNotebook"];
+  window.receiveNotebooks = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["receiveNotebooks"];
 });
 
 /***/ }),
@@ -873,10 +977,13 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _notebook_notebook_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./notebook/notebook_reducer */ "./frontend/reducers/notebook/notebook_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_0__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
+  notebooks: _notebook_notebook_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -899,6 +1006,46 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_error_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/notebook/notebook_reducer.js":
+/*!********************************************************!*\
+  !*** ./frontend/reducers/notebook/notebook_reducer.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/notebook_actions */ "./frontend/actions/notebook_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var notebookReducer = function notebookReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NOTEBOOKS"]:
+      return Object.assign({}, action.notebooks);
+
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NOTEBOOK"]:
+      return Object.assign({}, state, _defineProperty({}, action.notebook.id, action.notebook));
+
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_NOTEBOOK"]:
+      var nextState = Object.assign({}, state);
+      delete nextState[action.notebook.id];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (notebookReducer);
 
 /***/ }),
 
@@ -1066,6 +1213,59 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/notebook_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/util/notebook_api_util.js ***!
+  \********************************************/
+/*! exports provided: fetchNotebooks, fetchNotebook, createNotebook, updateNotebook, deleteNotebook */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebooks", function() { return fetchNotebooks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebook", function() { return fetchNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNotebook", function() { return createNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateNotebook", function() { return updateNotebook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteNotebook", function() { return deleteNotebook; });
+var fetchNotebooks = function fetchNotebooks() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/notebooks'
+  });
+};
+var fetchNotebook = function fetchNotebook(id) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/notebooks/".concat(id)
+  });
+};
+var createNotebook = function createNotebook(notebook) {
+  return $.ajax({
+    method: 'POST',
+    url: "/api/notebooks",
+    data: {
+      notebook: notebook
+    }
+  });
+};
+var updateNotebook = function updateNotebook(notebook) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "/api/notebooks/".concat(notebook.id),
+    data: {
+      notebook: notebook
+    }
+  });
+};
+var deleteNotebook = function deleteNotebook(notebook) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/notebooks/".concat(notebook.id)
+  });
+};
 
 /***/ }),
 
