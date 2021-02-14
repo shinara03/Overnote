@@ -1,98 +1,6 @@
 // Place all the styles related to the api::notebooks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// .nb-container {
-//   display: grid;
-//   grid-template-columns: 300px;
-//   font-family: 'Barlow', sans-serif;
-// }
-
-// .notebook-list {
-//   grid-column-start: 2;
-//   height: 100vh;
-//   padding: 0 30px;
-//   display: grid;
-//   grid-template-rows: 18%;
-// }
-
-// .notebook-header {
-//   border-bottom: 2px solid black;
-//   display: grid;
-//   grid-template-rows: 70%;
-//   grid-template-columns: 30% auto 20%;
-//   font-weight: 500;
-// }
-
-// .notebook-header > h1 {
-//   font-size: 20px;
-//   align-self: center;
-  
-// }
-
-// .notebook-header > p:nth-child(2) {
-//   grid-row-start: 2;
-//   grid-column: 1/2;
-//   align-self: center;
-//   font-size: 15px;
-// }
-
-// .notebook-header > p:nth-child(3) {
-//   grid-row-start: 2;
-//   grid-column: 3;
-//   align-self: center;
-//   font-size: 14px;
-// }
-
-// .notebook-body {
-//   display: grid;
-//   grid-template-columns: 40% 20% 15% 15% auto;
-// }
-
-// .notebook-body p {
-//   padding: 13px 10px;
-//   font-size: 11px;
-//   background-color: #F8F8F8;
-//   color: #B8B8B8;
-// }
-
-// .notebook-body p:nth-child(5) {
-//   text-align: right;
-// }
-
-
-
-// .notebook-body-header {
-//   display: grid;
-//   grid-template-columns: 40% 20% 15% 15% auto;
-//   justify-self: stretch;
-// }
-
-// .notebook-body-header p {
-//   // align-self: center;
-//   padding: 13px 10px;
-//   font-size: 11px;
-//   background-color: #F8F8F8;
-//   color: #B8B8B8;
-// }
-
-// .notebook-body-header p:nth-child(5) {
-//   text-align: right;
-// }
-
-// .notebook-index {
-//   display: grid;
-//   grid-template-columns: 40% 20% 15% 15% auto;
-//   padding: 13px 10px;
-//   font-size: 11px;
-//   background-color: #F8F8F8;
-//   color: #B8B8B8;
-// }
-
-// .nb-container {
-//   display: grid;
-//   grid-template-columns: 300px;
-//   font-family: 'Barlow', sans-serif;
-// }
 
 .nb-container {
   display: grid;
@@ -201,9 +109,5 @@
 
 .notebook-title p {
   margin: 0 5px;
-}
-
-.notebook-title p:nth-child(1) {
-  // margin-left: 20px;
 }
 

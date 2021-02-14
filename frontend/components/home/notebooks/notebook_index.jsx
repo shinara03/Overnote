@@ -31,8 +31,8 @@ class NotebookIndex extends React.Component {
               return (
                 <ul>
                   <li className='notebook-title' key={notebook.id}>
-                    <p><i class="fas fa-caret-right"></i></p>
-                    <p><i class="fas fa-book"></i></p>
+                    <p><i className="fas fa-caret-right"></i></p>
+                    <p><i className="fas fa-book"></i></p>
                     <p>{notebook.notebook_name}</p>
                   </li>
                   <li>{formatDate(notebook.created_at)}</li>
