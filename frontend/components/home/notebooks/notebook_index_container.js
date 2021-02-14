@@ -3,6 +3,7 @@ import NotebookIndex from './notebook_index';
 import {fetchNotebook, fetchNotebooks, createNotebook,
       updateNotebook, deleteNotebook } from '../../../actions/notebook_actions';
 import {makeNotebooksArr} from '../../../reducers/notebook/selector';
+import {openModal} from '../../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,7 +17,8 @@ const mapDispatchToProps = dispatch => {
     getOneNotebook: id => disapatch(fetchNotebook(id)),
     makeNotebook: notebook => dispatch(createNotebook(notebook)),
     editNotebook: notebook => dispatch(updateNotebook(notebook)),
-    deleteNotebook: notebook => dispatch(deleteNotebook(notebook))
+    deleteNotebook: notebook => dispatch(deleteNotebook(notebook)),
+    openModal: (modal) => dispatch(openModal(modal))
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
 import {formatDate} from '../../../util/date_util';
+import { openModal } from '../../modal/modal';
 
 class NotebookIndex extends React.Component {
   
@@ -16,7 +17,8 @@ class NotebookIndex extends React.Component {
         <div className='notebook-list'>
           <h1>Notebooks</h1>
           <h2>My notebook list </h2>
-          <button className='new-notebook-btn'>
+          <button onClick={() => this.props.openModal('new notebook')}
+                  className='new-notebook-btn'>
             <i className="fas fa-plus"></i>
             <p>New Notebook</p>
           </button>

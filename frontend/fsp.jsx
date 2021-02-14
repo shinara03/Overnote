@@ -5,7 +5,8 @@ import * as nbUtil from './util/notebook_api_util';
 import configureStore from './store/store'
 import Root from './components/root';
 import {logout, login} from './actions/session_actions';
-import { receiveNotebooks, fetchNotebooks, fetchNotebook, createNotebook, updateNotebook, deleteNotebook} from './actions/notebook_actions';
+import { receiveNotebooks, fetchNotebooks, fetchNotebook, createNotebook,
+         updateNotebook, deleteNotebook} from './actions/notebook_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   //to make user stay logged in 

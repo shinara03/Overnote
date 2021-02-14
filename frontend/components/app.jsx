@@ -7,18 +7,21 @@ import NavBarContainer from './splash/navbar/navbar_container';
 import SideBarContainer from './home/sidebar/sidebar_container';
 import ErrorPage from './errorPage/error_page';
 import NotebookIndexContainer from './home/notebooks/notebook_index_container';
-
+import Modal from './modal/modal';
 const App = () => {
   return (
-    <Switch>
-      <Route exact path='/' component={NavBarContainer}/>
-      <ProtectedRoute exact path='/home' component={SideBarContainer} />
-      <ProtectedRoute exact path='/home/notebooks' component={NotebookIndexContainer}/>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/404" component={ErrorPage} />
-      <Redirect to='/404' />
-    </Switch>
+    <>
+      <Modal />
+      <Switch>
+        <Route exact path='/' component={NavBarContainer}/>
+        <ProtectedRoute exact path='/home' component={SideBarContainer} />
+        <ProtectedRoute exact path='/home/notebooks' component={NotebookIndexContainer}/>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/404" component={ErrorPage} />
+        <Redirect to='/404' />
+      </Switch>
+    </>
   )
 }
 
