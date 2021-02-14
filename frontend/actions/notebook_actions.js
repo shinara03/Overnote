@@ -4,6 +4,7 @@ export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
 export const RECEIVE_NOTEBOOK_ERRORS = "RECEIVE_NOTEBOOK_ERRORS"
+export const CLEAR_NOTEBOOK_ERRORS = "CLEAR_NOTEBOOK_ERRORS"
 
 export const receiveNotebooks = (notebooks) => {
   return {
@@ -30,6 +31,13 @@ export const receiveNotebookErrors = (errors) => {
   return {
     type: RECEIVE_NOTEBOOK_ERRORS,
     errors
+  }
+}
+
+
+export const clearNBErrors = () => {
+  return {
+    type: CLEAR_NOTEBOOK_ERRORS
   }
 }
 

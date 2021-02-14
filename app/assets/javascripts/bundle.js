@@ -119,7 +119,7 @@ var closeModal = function closeModal() {
 /*!**********************************************!*\
   !*** ./frontend/actions/notebook_actions.js ***!
   \**********************************************/
-/*! exports provided: RECEIVE_NOTEBOOK, RECEIVE_NOTEBOOKS, REMOVE_NOTEBOOK, RECEIVE_NOTEBOOK_ERRORS, receiveNotebooks, receiveNotebook, removeNotebook, receiveNotebookErrors, fetchNotebooks, fetchNotebook, createNotebook, updateNotebook, deleteNotebook */
+/*! exports provided: RECEIVE_NOTEBOOK, RECEIVE_NOTEBOOKS, REMOVE_NOTEBOOK, RECEIVE_NOTEBOOK_ERRORS, CLEAR_NOTEBOOK_ERRORS, receiveNotebooks, receiveNotebook, removeNotebook, receiveNotebookErrors, clearNBErrors, fetchNotebooks, fetchNotebook, createNotebook, updateNotebook, deleteNotebook */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -128,10 +128,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NOTEBOOKS", function() { return RECEIVE_NOTEBOOKS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_NOTEBOOK", function() { return REMOVE_NOTEBOOK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NOTEBOOK_ERRORS", function() { return RECEIVE_NOTEBOOK_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_NOTEBOOK_ERRORS", function() { return CLEAR_NOTEBOOK_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebooks", function() { return receiveNotebooks; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebook", function() { return receiveNotebook; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeNotebook", function() { return removeNotebook; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNotebookErrors", function() { return receiveNotebookErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearNBErrors", function() { return clearNBErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebooks", function() { return fetchNotebooks; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotebook", function() { return fetchNotebook; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNotebook", function() { return createNotebook; });
@@ -143,6 +145,7 @@ var RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 var RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 var REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
 var RECEIVE_NOTEBOOK_ERRORS = "RECEIVE_NOTEBOOK_ERRORS";
+var CLEAR_NOTEBOOK_ERRORS = "CLEAR_NOTEBOOK_ERRORS";
 var receiveNotebooks = function receiveNotebooks(notebooks) {
   return {
     type: RECEIVE_NOTEBOOKS,
@@ -165,6 +168,11 @@ var receiveNotebookErrors = function receiveNotebookErrors(errors) {
   return {
     type: RECEIVE_NOTEBOOK_ERRORS,
     errors: errors
+  };
+};
+var clearNBErrors = function clearNBErrors() {
+  return {
+    type: CLEAR_NOTEBOOK_ERRORS
   };
 };
 var fetchNotebooks = function fetchNotebooks() {
@@ -775,6 +783,7 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
+      this.props.clearErrors();
       var newNotebook = Object.assign({}, this.state);
       this.props.createNotebook(newNotebook).then(function () {
         return _this3.props.closeModal();
@@ -783,12 +792,18 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-notebook-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-notebook-text"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create new notebook", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        onClick: this.props.closeModal,
+        onClick: function onClick() {
+          _this4.props.closeModal();
+
+          _this4.props.clearErrors();
+        },
         className: "fas fa-times"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Notebooks are useful for grouping notes around a common topic.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
@@ -800,11 +815,17 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
         value: this.state.notebook_name,
         onChange: this.update()
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-notebook-error"
+      }, this.props.createError[0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-notebook-btns"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "new-notebook-cancel",
-        onClick: this.props.closeModal
-      }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          _this4.props.closeModal();
+
+          _this4.props.clearErrors();
+        }
+      }, " Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "new-notebook-continue"
       }, "Continue"))));
@@ -828,6 +849,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_3__["clearNBErrors"])());
     }
   };
 };
@@ -1463,8 +1487,9 @@ var notebookErrorReducer = function notebookErrorReducer() {
 
     case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NOTEBOOK"]:
       return [];
-    // case CLEAR_ERRORS:
-    //   return [];
+
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_NOTEBOOK_ERRORS"]:
+      return [];
 
     default:
       return state;

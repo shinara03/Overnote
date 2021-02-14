@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {closeModal} from '../../actions/modal_actions'
-import {createNotebook} from '../../actions/notebook_actions';
+import {clearNBErrors, createNotebook} from '../../actions/notebook_actions';
 
 class NewNotebookModal extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class NewNotebookModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     const newNotebook= Object.assign({}, this.state);
     this.props.createNotebook(newNotebook).then(() => this.props.closeModal());
   }
@@ -29,7 +30,10 @@ class NewNotebookModal extends React.Component {
       <div className='new-notebook-wrapper'>
         <div className='new-notebook-text'>
           <h1>Create new notebook
-              <i onClick={this.props.closeModal} className="fas fa-times"></i>
+              <i onClick={() => { 
+                this.props.closeModal()
+                this.props.clearErrors()}} 
+                className="fas fa-times"></i>
           </h1>
           <h2>Notebooks are useful for grouping notes around a common topic.</h2>
         </div>
@@ -39,8 +43,14 @@ class NewNotebookModal extends React.Component {
                   value={this.state.notebook_name}
                   onChange={this.update()}  />
           </label>
+          <div className='new-notebook-error'>{this.props.createError[0]}</div>
           <div className='new-notebook-btns'>
-            <button className='new-notebook-cancel' onClick={this.props.closeModal}>Cancel</button>
+            <button className='new-notebook-cancel' 
+                    onClick={() => {
+                            this.props.closeModal()
+                            this.props.clearErrors()
+                    }} > Cancel
+            </button>
             <button type='submit' className='new-notebook-continue'>Continue</button>
           </div>
         </form>
@@ -59,7 +69,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createNotebook: (notebook) => dispatch(createNotebook(notebook)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearNBErrors())
   }
 }
 
