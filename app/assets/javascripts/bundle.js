@@ -816,7 +816,8 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    author_id: state.session.id
+    author_id: state.session.id,
+    createError: state.errors.notebook
   };
 };
 
@@ -1393,11 +1394,14 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _session_error_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_error_reducer */ "./frontend/reducers/session_error_reducer.js");
+/* harmony import */ var _notebook_notebook_error_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./notebook/notebook_error_reducer */ "./frontend/reducers/notebook/notebook_error_reducer.js");
+/* harmony import */ var _session_error_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session_error_reducer */ "./frontend/reducers/session_error_reducer.js");
+
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  session: _session_error_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  session: _session_error_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  notebook: _notebook_notebook_error_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 
@@ -1433,6 +1437,41 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/notebook/notebook_error_reducer.js":
+/*!**************************************************************!*\
+  !*** ./frontend/reducers/notebook/notebook_error_reducer.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/notebook_actions */ "./frontend/actions/notebook_actions.js");
+
+
+var notebookErrorReducer = function notebookErrorReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NOTEBOOK_ERRORS"]:
+      return action.errors;
+
+    case _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NOTEBOOK"]:
+      return [];
+    // case CLEAR_ERRORS:
+    //   return [];
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (notebookErrorReducer);
 
 /***/ }),
 

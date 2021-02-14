@@ -75,14 +75,11 @@ class SessionForm extends React.Component {
                       placeholder="Email address"
                       onChange={this.update('email')} />
               <br/>
-                {/* <div className="session-errors">{emailError}</div> */}
                 <input className='session-inputs' type="password" 
                       value={this.state.password} 
                       placeholder="Password"
                       onChange={this.update('password')} />
               <br/>
-              {/* <div className="session-errors">{passwordError}</div>
-              <div className="session-errors">{combiError}</div> */}
               {this.renderError()}
               <input className='session-button' type='submit' value="Continue" />
             </div>
@@ -91,8 +88,6 @@ class SessionForm extends React.Component {
             {this.getFooter()}
           </div>
         </div>
-        {/* <div className='session-terms'>Terms of Service | Privacy Policy | 
-                      Copyright 2021 Lena Shin. All rights reserved.</div> */}
       </div>
     )
   }

@@ -51,7 +51,8 @@ class NewNotebookModal extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    author_id: state.session.id
+    author_id: state.session.id,
+    createError: state.errors.notebook
   }
 }
 
