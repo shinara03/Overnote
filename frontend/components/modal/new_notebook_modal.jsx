@@ -10,18 +10,40 @@ class NewNotebookModal extends React.Component {
       notebook_name: "",
       author_id: this.props.author_id
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update() {
+    return e => this.setState({notebook_name: e.target.value})
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const newNotebook= Object.assign({}, this.state);
+    this.props.createNotebook(newNotebook).then(() => this.props.closeModal());
   }
 
   render() {
     return (
-      <div>
-        <h1>Create new notebook</h1>
-        <h2>Notebooks are useful for grouping notes around a common topic</h2>
-        <label>Name
-          <input type="text" placeholder="Notebook name" />
-        </label>
-        <button onClick={this.props.closeModal}>Cancel</button>
-        <button>continue</button>
+      <div className='new-notebook-wrapper'>
+        <div className='new-notebook-text'>
+          <h1>Create new notebook
+              <i onClick={this.props.closeModal} className="fas fa-times"></i>
+          </h1>
+          <h2>Notebooks are useful for grouping notes around a common topic.</h2>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+          <label className='new-notebook-label'>Name
+            <input type="text" placeholder="Notebook name"
+                  value={this.state.notebook_name}
+                  onChange={this.update()}  />
+          </label>
+          <div className='new-notebook-btns'>
+            <button className='new-notebook-cancel' onClick={this.props.closeModal}>Cancel</button>
+            <button type='submit' className='new-notebook-continue'>Continue</button>
+          </div>
+        </form>
       </div>
     )
   }

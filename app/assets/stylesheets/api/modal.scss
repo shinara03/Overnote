@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(74, 74, 74, 0.44);
   z-index: 10;
 }
 
@@ -16,4 +16,88 @@
   background-color: white;
   border-radius: 3px;
   transform: translate(-50%, -50%);
+}
+
+//new notebook modal
+ 
+.new-notebook-wrapper {
+  width: 517px;
+  height: 297px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.new-notebook-text {
+  padding: 32px 25px 18px;
+
+}
+
+.new-notebook-text h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+  display:flex;
+  justify-content: space-between;
+}
+
+.new-notebook-text h1 > i {
+  color: rgb(115,115,115);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.new-notebook-text h2 {
+  font-size: 14px;
+  padding-top: 20px;
+  color: #777777;
+}
+
+.new-notebook-label {
+  padding: 0 25px 50px;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: space-around;
+  font-size: 12px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.new-notebook-label input{
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+}
+
+.new-notebook-label input:focus{
+  outline-style: none;
+  border: 1px solid #0481C2;
+}
+
+.new-notebook-btns {
+  margin: 21px;
+  text-align: right;
+  padding-right: 5px;
+ 
+}
+
+.new-notebook-cancel {
+  margin: 0 10px;
+  width: 76px;
+  height: 37px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+  color: #737373;
+  cursor: pointer;
+}
+
+.new-notebook-continue {
+  width: 86px;
+  height: 38px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  background-color: #01A82D;
+  font-size: 14px;
+  cursor: pointer;
 }
