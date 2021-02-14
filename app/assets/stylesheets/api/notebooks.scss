@@ -1,69 +1,209 @@
 // Place all the styles related to the api::notebooks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .nb-container {
+//   display: grid;
+//   grid-template-columns: 300px;
+//   font-family: 'Barlow', sans-serif;
+// }
+
+// .notebook-list {
+//   grid-column-start: 2;
+//   height: 100vh;
+//   padding: 0 30px;
+//   display: grid;
+//   grid-template-rows: 18%;
+// }
+
+// .notebook-header {
+//   border-bottom: 2px solid black;
+//   display: grid;
+//   grid-template-rows: 70%;
+//   grid-template-columns: 30% auto 20%;
+//   font-weight: 500;
+// }
+
+// .notebook-header > h1 {
+//   font-size: 20px;
+//   align-self: center;
+  
+// }
+
+// .notebook-header > p:nth-child(2) {
+//   grid-row-start: 2;
+//   grid-column: 1/2;
+//   align-self: center;
+//   font-size: 15px;
+// }
+
+// .notebook-header > p:nth-child(3) {
+//   grid-row-start: 2;
+//   grid-column: 3;
+//   align-self: center;
+//   font-size: 14px;
+// }
+
+// .notebook-body {
+//   display: grid;
+//   grid-template-columns: 40% 20% 15% 15% auto;
+// }
+
+// .notebook-body p {
+//   padding: 13px 10px;
+//   font-size: 11px;
+//   background-color: #F8F8F8;
+//   color: #B8B8B8;
+// }
+
+// .notebook-body p:nth-child(5) {
+//   text-align: right;
+// }
+
+
+
+// .notebook-body-header {
+//   display: grid;
+//   grid-template-columns: 40% 20% 15% 15% auto;
+//   justify-self: stretch;
+// }
+
+// .notebook-body-header p {
+//   // align-self: center;
+//   padding: 13px 10px;
+//   font-size: 11px;
+//   background-color: #F8F8F8;
+//   color: #B8B8B8;
+// }
+
+// .notebook-body-header p:nth-child(5) {
+//   text-align: right;
+// }
+
+// .notebook-index {
+//   display: grid;
+//   grid-template-columns: 40% 20% 15% 15% auto;
+//   padding: 13px 10px;
+//   font-size: 11px;
+//   background-color: #F8F8F8;
+//   color: #B8B8B8;
+// }
+
+// .nb-container {
+//   display: grid;
+//   grid-template-columns: 300px;
+//   font-family: 'Barlow', sans-serif;
+// }
+
 .nb-container {
   display: grid;
-  grid-template-columns: 25%;
+  grid-template-columns: 300px;
   font-family: 'Barlow', sans-serif;
 }
 
 .notebook-list {
-  grid-column-start: 2;
+  grid-column: 2/-1;
   height: 100vh;
   padding: 0 30px;
   display: grid;
-  grid-template-rows: 18%;
+  grid-template-rows: 80px 44px 40px 1fr;
+  grid-template-columns: 2fr repeat(2, 0.8fr) 1fr; 
+  align-items: center;
+  font-size: 10px;
+}
+
+.notebook-list > h1 {
+  font-size: 20px;
+}
+
+.notebook-list > h2 {
+  grid-row: 2;
+  font-size: 16px;
+}
+
+.new-notebook-btn{
+  grid-row: 2;
+  grid-column: 4;
+  background-color: white;
+  border: white;
+  font-size: 14px;
+  color: #01A82D;
+  justify-self: right;
+  display:flex;
+  justify-content: space-between;
+}
+
+.new-notebook-btn > i {
+  font-size: 10px;
+  margin-right: 5px;
+  align-self: center;
 }
 
 .notebook-header {
-  border-bottom: 2px solid black;
+  grid-row: 3;
+  grid-column: 1/-1;
   display: grid;
-  grid-template-rows: 70%;
-  grid-template-columns: 30% auto 20%;
-  font-weight: 500;
-}
-
-.notebook-header > h1 {
-  font-size: 20px;
-  align-self: center;
-  
-}
-
-.notebook-header > p:nth-child(2) {
-  grid-row-start: 2;
-  grid-column: 1/2;
-  align-self: center;
-  font-size: 15px;
-}
-
-.notebook-header > p:nth-child(3) {
-  grid-row-start: 2;
-  grid-column: 3;
-  align-self: center;
-  font-size: 14px;
-}
-
-.notebook-body {
-  // display: grid;
-  // grid-template-rows: 40px;
-}
-
-.notebook-body-header {
-  display: grid;
-  grid-template-columns: 40% 20% 15% 15% auto;
-  justify-self: stretch;
-}
-
-.notebook-body-header p {
-  // align-self: center;
-  padding: 13px 10px;
-  font-size: 11px;
+  grid-template-columns: 2fr repeat(2, 0.8fr) 1fr; 
   background-color: #F8F8F8;
   color: #B8B8B8;
+  padding: 13px 0;
+  border-top: 2px solid black;
 }
 
-.notebook-body-header p:nth-child(5) {
+.notebook-header h3 {
+  margin: 0 10px;
+}
+
+.notebook-action {
   text-align: right;
 }
 
+.notebook-body {
+  grid-row-start: 4;
+  grid-column: 1/-1; 
+  align-self: start;
+}
+
+.notebook-body ul {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 0.8fr) 1fr; 
+  list-style-type: none;
+  padding: 13px 0;
+  color: #777777;
+  font-size: 14px;
+}
+
+.notebook-body ul:hover {
+  background-color: #F2F2F2;
+}
+
+.notebook-body ul li {
+  margin: 0 10px;
+}
+
+.notebook-body ul > i {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.notebook-body ul:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+.notebook-body ul:nth-child(even):hover {
+  background-color: #F2F2F2;
+}
+
+.notebook-title {
+  display: flex;
+  flex-direction: row;
+  color: #555555;
+}
+
+.notebook-title p {
+  margin: 0 5px;
+}
+
+.notebook-title p:nth-child(1) {
+  // margin-left: 20px;
+}
 

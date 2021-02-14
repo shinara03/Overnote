@@ -5,7 +5,6 @@ import {fetchNotebook, fetchNotebooks, createNotebook,
 import {makeNotebooksArr} from '../../../reducers/notebook/selector';
 
 const mapStateToProps = state => {
-  
   return {
     notebooks: makeNotebooksArr(state.entities)
   }
