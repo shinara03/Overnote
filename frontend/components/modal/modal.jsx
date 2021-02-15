@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewNotebookModal from './new_notebook_modal';
+import RenameNBModal from './rename_notebook_modal';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'new notebook':
       component = <NewNotebookModal />;
+      break;
+    case 'rename notebook':
+      component = <RenameNBModal />;
       break;
     default:
       return null;
@@ -26,7 +30,7 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.name
   };
 };
 

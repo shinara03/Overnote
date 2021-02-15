@@ -1,7 +1,6 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
-import {formatDate} from '../../../util/date_util';
-import { openModal } from '../../modal/modal';
+import NotebookIndexListItem from './notebook_index_list_Items';
 
 class NotebookIndex extends React.Component {
   
@@ -31,16 +30,7 @@ class NotebookIndex extends React.Component {
           <div className='notebook-body'>
             {this.props.notebooks.map(notebook => {
               return (
-                <ul>
-                  <li className='notebook-title' key={notebook.id}>
-                    <p><i className="fas fa-caret-right"></i></p>
-                    <p><i className="fas fa-book"></i></p>
-                    <p>{notebook.notebook_name}</p>
-                  </li>
-                  <li>{formatDate(notebook.created_at)}</li>
-                  <li>{formatDate(notebook.updated_at)}</li>
-                  <i className="fas fa-ellipsis-h"></i>
-                </ul>
+                <NotebookIndexListItem notebook={notebook} openModal={this.props.openModal}  />
               )
             })}
           </div>

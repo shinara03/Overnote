@@ -89,11 +89,6 @@
   margin: 0 10px;
 }
 
-.notebook-body ul > i {
-  text-align: right;
-  margin-right: 10px;
-}
-
 .notebook-body ul:nth-child(even) {
   background-color: #F8F8F8;
 }
@@ -112,3 +107,36 @@
   margin: 0 5px;
 }
 
+.notebook-body .notebook-dropdown {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.notebook-dropdown button {
+  background-color: transparent;
+  border: none;
+  color: #777777;
+  outline-style: none;
+  cursor: pointer;
+}
+
+// .notebook-dropdown i{
+//   cursor: pointer;
+// }
+
+// .notebook-actions {
+//   opacity: 0;
+//   position: absolute;
+//   background: white;
+//   border: 1px solid gray;
+//   padding: 10px;
+//   text-align: center;
+//   height: 40px;
+//   margin-left: 80px;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .notebook-actions.dropdown{
+//   opacity: 1;
+// }

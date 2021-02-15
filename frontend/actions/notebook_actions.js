@@ -59,7 +59,8 @@ export const createNotebook = notebook => dispatch => {
 
 export const updateNotebook = notebook => dispatch => {
   return NBUtil.updateNotebook(notebook)
-        .then(notebook => dispatch(receiveNotebook(notebook)))
+        .then(notebook => dispatch(receiveNotebook(notebook)),
+          error => dispatch(receiveNotebookErrors(error.responseJSON)))
 }
 
 export const deleteNotebook = notebook => dispatch => {

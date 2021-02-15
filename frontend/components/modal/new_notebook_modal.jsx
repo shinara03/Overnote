@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {closeModal} from '../../actions/modal_actions'
+import {closeModal} from '../../actions/modal_actions';
 import {clearNBErrors, createNotebook} from '../../actions/notebook_actions';
 
 class NewNotebookModal extends React.Component {
