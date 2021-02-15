@@ -1,71 +1,104 @@
+// .sidebar {
+//   background: black;
+//   width: 300px;
+//   height: 100vh;
+//   position: fixed;
+//   font-family: 'Barlow', sans-serif;
+// }
+
+// .sidebar-user {
+//   color: white;
+//   width: 65%;
+// }
+
+// .drop-btn {
+//   background-color: black;
+//   border: none;
+//   cursor: pointer;
+//   display: flex;
+// }
+
+// .sidebar-icon {
+//   height: 25px;
+//   width: 25px;
+//   margin: 10px 10px; 
+// }
+
+// .arrow {
+//   margin: 10px 10px;
+//   border: solid 20px #CCCCCC;
+//   border-width: 0 2px 2px 0;
+//   padding: 2px;
+//   transform: rotate(45deg);
+//   align-self: center;
+// }
+
+// .drop-btn h2 {
+//   align-self: center;
+//   font-size: 13px;
+//   color: #CCCCCC;
+// }
+
+// .drop-btn > h2:hover {
+//   color: white;
+// }
+
+// .dropdown-content {
+//   display:none;
+//   position: absolute;
+//   background-color: white;
+//   border-radius: 2px;
+//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//   color: #494949;
+//   padding: 10px 10px;
+//   width: 100%;
+// }
+
+// .logout-btn {
+//   border: none;
+//   background: white;
+// }
+
+// .logout-btn:hover {
+//   background: #e7e7e7;
+//   width: 100%;
+//   text-align: left;
+// }
+
+// .sidebar-user:hover .dropdown-content {
+//   display: block;
+// }
+
 .sidebar {
-  background: black;
   width: 300px;
-  height: 100vh;
-  position: fixed;
-  font-family: Verdana, sans-serif;;
-}
-
-.sidebar-user {
-  color: white;
-  width: 65%;
-}
-
-.drop-btn {
   background-color: black;
-  border: none;
-  cursor: pointer;
+  // height: 100vh;
+}
+
+.user-info {
   display: flex;
-}
-
-.sidebar-icon {
-  height: 25px;
-  width: 25px;
-  margin: 10px 10px; 
-}
-
-.arrow {
-  margin: 10px 10px;
-  border: solid 20px #CCCCCC;
-  border-width: 0 2px 2px 0;
-  padding: 2px;
-  transform: rotate(45deg);
-  align-self: center;
-}
-
-.drop-btn h2 {
-  align-self: center;
-  font-size: 13px;
-  color: #CCCCCC;
-}
-
-.drop-btn > h2:hover {
+  margin: 20px;
   color: white;
 }
 
-.dropdown-content {
-  display:none;
-  position: absolute;
-  background-color: white;
-  border-radius: 2px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  color: #494949;
-  padding: 10px 10px;
-  width: 100%;
+.user-info > i {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.user-info > h2 {
+  margin-top: 7px;
+  font-size: 14px;
 }
 
 .logout-btn {
   border: none;
-  background: white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
-.logout-btn:hover {
-  background: #e7e7e7;
-  width: 100%;
-  text-align: left;
+.sidebar-notebooks {
+  color: white;
 }
-
-.sidebar-user:hover .dropdown-content {
-  display: block;
-}
-

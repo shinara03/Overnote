@@ -4,15 +4,11 @@ import React from 'react';
 const Greeting = (props) => {
   return (
       <div className='sidebar-user'>
-          <button className='drop-btn'>
-            <img className='sidebar-icon' src={window.sidebarIconURL} />
+        <div className='user-info'>
+            <i className="fas fa-user-circle"></i>
             <h2>{props.currentUser.email}</h2>
-            <i className='arrow'></i>
-          </button>
-        <div id='sb-dropdown' className='dropdown-content'>
-            <button className='logout-btn' onClick={props.logout}>Sign out {props.currentUser.email}</button>
         </div>
-        {/* <button onClick={props.logout}>Sign out</button> */}
+            <button className='logout-btn' onClick={props.logout}>Sign out {props.currentUser.email}</button>
       </div>
   )
 }

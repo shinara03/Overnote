@@ -30,7 +30,7 @@ class NotebookIndex extends React.Component {
           <div className='notebook-body'>
             {this.props.notebooks.map(notebook => {
               return (
-                <NotebookIndexListItem notebook={notebook} openModal={this.props.openModal}  />
+                <NotebookIndexListItem key={notebook.id} notebook={notebook} openModal={this.props.openModal}  />
               )
             })}
           </div>

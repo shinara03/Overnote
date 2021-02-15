@@ -39,6 +39,7 @@
   display:flex;
   justify-content: space-between;
   cursor: pointer;
+  outline-style: none;
 }
 
 .new-notebook-btn > i {
@@ -140,3 +141,19 @@
 // .notebook-actions.dropdown{
 //   opacity: 1;
 // }
+
+.notebook-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.notebook-actions {
+  display: none;
+}
+.notebook-actions.dropdown {
+  position: absolute;
+}
+
+.notebook-dropdown > i {
+  cursor: pointer;
+}

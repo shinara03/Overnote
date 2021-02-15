@@ -1,0 +1,15 @@
+.homepage-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 300px 300px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.homepage-content {
+  grid-column: 2/-1;
+  height: 100vh;
+  padding: 0 30px;
+  display: grid;
+  grid-template-rows: 80px 44px 40px 1fr;
+  grid-template-columns: 2fr repeat(2, 0.8fr) 1fr; 
+}

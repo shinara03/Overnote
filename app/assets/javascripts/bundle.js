@@ -313,15 +313,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session/session_form/signup_form_container */ "./frontend/components/session/session_form/signup_form_container.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash/navbar/navbar_container */ "./frontend/components/splash/navbar/navbar_container.js");
-/* harmony import */ var _home_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/sidebar/sidebar_container */ "./frontend/components/home/sidebar/sidebar_container.js");
-/* harmony import */ var _errorPage_error_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./errorPage/error_page */ "./frontend/components/errorPage/error_page.jsx");
-/* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./errorPage/error_page */ "./frontend/components/errorPage/error_page.jsx");
+/* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _home_homepage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/homepage */ "./frontend/components/home/homepage.jsx");
 
 
 
 
 
+ // import SideBarContainer from './home/sidebar/sidebar_container';
 
 
 
@@ -329,18 +330,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
     component: _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     exact: true,
     path: "/home",
-    component: _home_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _home_homepage__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     exact: true,
     path: "/home/notebooks",
-    component: _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["AuthRoute"], {
     exact: true,
     path: "/login",
@@ -352,7 +353,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/404",
-    component: _errorPage_error_page__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/404"
   })));
@@ -406,23 +407,44 @@ __webpack_require__.r(__webpack_exports__);
 var Greeting = function Greeting(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sidebar-user"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "drop-btn"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "sidebar-icon",
-    src: window.sidebarIconURL
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "arrow"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "sb-dropdown",
-    className: "dropdown-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "user-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-user-circle"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.currentUser.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "logout-btn",
     onClick: props.logout
-  }, "Sign out ", props.currentUser.email)));
+  }, "Sign out ", props.currentUser.email));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Greeting);
+
+/***/ }),
+
+/***/ "./frontend/components/home/homepage.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/home/homepage.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar/sidebar_container */ "./frontend/components/home/sidebar/sidebar_container.js");
+
+
+
+var HomePage = function HomePage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "homepage-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "homepage-content"
+  }, "hello"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HomePage);
 
 /***/ }),
 
@@ -505,6 +527,7 @@ var NotebookIndex = /*#__PURE__*/function (_React$Component) {
         className: "notebook-body"
       }, this.props.notebooks.map(function (notebook) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notebook_index_list_Items__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: notebook.id,
           notebook: notebook,
           openModal: _this.props.openModal
         });
@@ -621,29 +644,27 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      dropdown: false
-    };
-    _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this));
+      dropdown: {}
+    }; // this.toggleDropdown = this.toggleDropdown.bind(this);
+
     return _this;
-  }
+  } // toggleDropdown() {
+  //   if (this.state.dropdown[notebook_id] === false){
+  //     this.setState({ dropdown: { [notebook.id]: true } })
+  //   } else {
+  //     this.setState({ dropdown: { [notebook.id]: false } })
+  //   }
+  // }
+
 
   _createClass(NotebookIndexListItem, [{
-    key: "toggleDropdown",
-    value: function toggleDropdown(e) {
-      this.setState({
-        dropdown: !this.state.dropdown
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
       var notebook = this.props.notebook;
       var dropdown = this.state.dropdown;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        key: notebook.id
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "notebook-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-caret-right"
@@ -651,6 +672,10 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-book"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, notebook.notebook_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.created_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.updated_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notebook-dropdown"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-ellipsis-h"
+      }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notebook-actions ".concat(dropdown.notebook_id ? 'dropdown' : '')
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.props.openModal('rename notebook', notebook.id);
@@ -659,7 +684,7 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.props.openModal('delete notebook', notebook.id);
         }
-      }, "Delete notebook")));
+      }, "Delete notebook"))));
     }
   }]);
 
@@ -691,7 +716,13 @@ var SideBar = function SideBar(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting__WEBPACK_IMPORTED_MODULE_1__["default"], {
     currentUser: props.currentUser,
     logout: props.logout
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-notebooks"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-caret-right"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-book"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Notebooks")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SideBar);
@@ -807,7 +838,7 @@ var DeleteNBModal = /*#__PURE__*/function (_React$Component) {
         className: "delete-nb-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-nb-texts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Delete notebook", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Delete notebook?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         onClick: function onClick() {
           return _this3.props.closeModal();
         },
@@ -821,7 +852,7 @@ var DeleteNBModal = /*#__PURE__*/function (_React$Component) {
         }
       }, " Cancel "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
-        className: "delete-nb-continue",
+        className: "delete-nb-delete",
         onClick: this.handleClick
       }, "Delete")));
     }
@@ -833,8 +864,7 @@ var DeleteNBModal = /*#__PURE__*/function (_React$Component) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     author_id: state.session.id,
-    notebookId: state.ui.modal.notebookId // notebooks: state.entities.notebooks
-
+    notebookId: state.ui.modal.notebookId
   };
 };
 

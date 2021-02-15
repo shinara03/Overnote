@@ -17,7 +17,7 @@ class DeleteNBModal extends React.Component{
     return (
       <div className='delete-nb-wrapper'>
         <div className='delete-nb-texts'>
-          <h1>Delete notebook
+          <h1>Delete notebook?
             <i onClick={() => this.props.closeModal()} className="fas fa-times"></i>
           </h1>
           <h2>Any notes in the notebook will be delete. This cannot be undone.</h2>
@@ -25,7 +25,7 @@ class DeleteNBModal extends React.Component{
         <div className='delete-nb-btns'>
           <button className='delete-nb-cancel'
             onClick={() => this.props.closeModal()} > Cancel </button>
-          <button type='submit' className='delete-nb-continue'
+          <button type='submit' className='delete-nb-delete'
                   onClick={this.handleClick}>
                   Delete
           </button>
@@ -39,8 +39,7 @@ class DeleteNBModal extends React.Component{
 const mapStateToProps = state => {
   return {
     author_id: state.session.id,
-    notebookId: state.ui.modal.notebookId,
-    // notebooks: state.entities.notebooks
+    notebookId: state.ui.modal.notebookId
   }
 }
 
