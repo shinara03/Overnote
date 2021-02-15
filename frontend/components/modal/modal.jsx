@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewNotebookModal from './new_notebook_modal';
 import RenameNBModal from './rename_notebook_modal';
+import DeleteNBModal from './delete_notebook_modal';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -15,6 +16,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'rename notebook':
       component = <RenameNBModal />;
+      break;
+    case 'delete notebook':
+      component = <DeleteNBModal />;
       break;
     default:
       return null;

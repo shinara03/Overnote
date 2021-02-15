@@ -38,7 +38,7 @@ class NotebookIndexListItem extends React.Component {
           <button onClick={() => this.props.openModal('rename notebook', notebook.id)}>
             Rename notebook
           </button>
-          <button onClick={() => this.props.openModal('delete notebook')}>
+          <button onClick={() => this.props.openModal('delete notebook', notebook.id)}>
             Delete notebook
           </button>
         </div>
