@@ -8,7 +8,7 @@ class NewNotebookModal extends React.Component {
     super(props)
     this.state = {
       notebook_name: "",
-      author_id: this.props.author_id
+      author_id: this.props.authorId
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,7 +61,7 @@ class NewNotebookModal extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    author_id: state.session.id,
+    authorId: state.session.id,
     createError: state.errors.notebook
   }
 }

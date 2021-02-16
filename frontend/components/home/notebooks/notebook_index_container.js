@@ -6,7 +6,7 @@ import {openModal} from '../../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
-    notebooks: makeNotebooksArr(state.entities)
+    notebooks: makeNotebooksArr(state.entities),
   }
 }
 

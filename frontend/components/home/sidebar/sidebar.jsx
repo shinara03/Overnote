@@ -1,7 +1,6 @@
 import React from 'react';
 import Greeting from '../greeting/greeting';
 import { Link } from 'react-router-dom';
-// import NotebookSidebarContainer from '../notebooks/notebook_sidebar_container';
 
 const SideBar = (props) => {
   return (

@@ -9,7 +9,7 @@ class RenameNBModal extends React.Component {
     this.state = {
       id: this.props.notebookId,
       notebook_name: "",
-      author_id: this.props.author_id
+      author_id: this.props.authorId
     }
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +23,7 @@ class RenameNBModal extends React.Component {
     e.preventDefault();
     this.props.clearErrors();
     const {notebooks, notebookId} = this.props
-    if (notebooks[notebookId].notebook_name === this.state.notebook_name)
+    if (notebooks[notebookId].notebookName === this.state.notebook_name)
     {
       this.props.receiveNotebookErrors(["Notebook name hasn't changed"]);
     } else {
@@ -70,7 +70,7 @@ class RenameNBModal extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    author_id: state.session.id,
+    authorId: state.session.id,
     updateErrors: state.errors.notebook,
     notebookId: state.ui.modal.notebookId,
     notebooks: state.entities.notebooks

@@ -30,10 +30,10 @@ class NotebookIndexListItem extends React.Component {
         <li className='notebook-title'>
           <p><i className="fas fa-caret-right"></i></p>
           <p><i className="fas fa-book"></i></p>
-          <p>{notebook.notebook_name}</p>
+          <p>{notebook.notebookName}</p>
         </li>
-        <li>{formatDate(notebook.created_at)}</li>
-        <li>{formatDate(notebook.updated_at)}</li>
+        <li>{formatDate(notebook.createdAt)}</li>
+        <li>{formatDate(notebook.updatedAt)}</li>
         <div className='notebook-dropdown'>
           <div value={notebook.id} onClick={this.toggleDropdown}><i className="fas fa-ellipsis-h"> </i> </div>
           <div className={dropdownClass}>

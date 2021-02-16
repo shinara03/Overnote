@@ -38,7 +38,6 @@ class DeleteNBModal extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    author_id: state.session.id,
     notebookId: state.ui.modal.notebookId
   }
 }

@@ -665,7 +665,7 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-caret-right"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-book"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, notebook.notebook_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.created_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.updated_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, notebook.notebookName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.createdAt)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.updatedAt)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notebook-dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         value: notebook.id,
@@ -708,7 +708,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
- // import NotebookSidebarContainer from '../notebooks/notebook_sidebar_container';
+
 
 var SideBar = function SideBar(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -875,7 +875,6 @@ var DeleteNBModal = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    author_id: state.session.id,
     notebookId: state.ui.modal.notebookId
   };
 };
@@ -1038,7 +1037,7 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       notebook_name: "",
-      author_id: _this.props.author_id
+      author_id: _this.props.authorId
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -1115,7 +1114,7 @@ var NewNotebookModal = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    author_id: state.session.id,
+    authorId: state.session.id,
     createError: state.errors.notebook
   };
 };
@@ -1193,7 +1192,7 @@ var RenameNBModal = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       id: _this.props.notebookId,
       notebook_name: "",
-      author_id: _this.props.author_id
+      author_id: _this.props.authorId
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -1221,7 +1220,7 @@ var RenameNBModal = /*#__PURE__*/function (_React$Component) {
           notebooks = _this$props.notebooks,
           notebookId = _this$props.notebookId;
 
-      if (notebooks[notebookId].notebook_name === this.state.notebook_name) {
+      if (notebooks[notebookId].notebookName === this.state.notebook_name) {
         this.props.receiveNotebookErrors(["Notebook name hasn't changed"]);
       } else {
         var notebook = Object.assign({}, this.state);
@@ -1280,7 +1279,7 @@ var RenameNBModal = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    author_id: state.session.id,
+    authorId: state.session.id,
     updateErrors: state.errors.notebook,
     notebookId: state.ui.modal.notebookId,
     notebooks: state.entities.notebooks
