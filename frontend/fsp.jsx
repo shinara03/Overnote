@@ -8,6 +8,7 @@ import {logout, login} from './actions/session_actions';
 import { receiveNotebooks, fetchNotebooks, fetchNotebook, createNotebook,
          updateNotebook, deleteNotebook} from './actions/notebook_actions';
 import * as NUtil from './util/note_api_util';
+import * as noteActions from './actions/note_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   //to make user stay logged in 
@@ -42,4 +43,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.deleteNotebook = deleteNotebook;
   window.receiveNotebooks = receiveNotebooks;
   window.NUtil = NUtil;
+  window.noteActions = noteActions;
 })
