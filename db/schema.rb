@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_074514) do
+ActiveRecord::Schema.define(version: 2021_02_16_182142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2021_02_16_074514) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_notebooks_on_author_id"
     t.index ["notebook_name", "author_id"], name: "index_notebooks_on_notebook_name_and_author_id", unique: true
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.integer "notebook_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notebook_id"], name: "index_notes_on_notebook_id"
+    t.index ["title"], name: "index_notes_on_title"
   end
 
   create_table "users", force: :cascade do |t|
