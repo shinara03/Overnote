@@ -28,7 +28,7 @@ class NotebookIndexListItem extends React.Component {
     return (
       <ul>
         <li className='notebook-title'>
-          <p><i className="fas fa-caret-right"></i></p>
+          {/* <p><i className="fas fa-caret-right"></i></p> */}
           <p><i className="fas fa-book"></i></p>
           <p>{notebook.notebookName}</p>
         </li>
