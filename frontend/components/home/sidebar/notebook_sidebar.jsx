@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {makeNotebooksArr} from '../../../reducers/notebook/selector';
+import {fetchNotebooks} from '../../../actions/notebook_actions';
 
 class NotebookSidebar extends React.Component {
   componentDidMount() {
@@ -7,11 +9,18 @@ class NotebookSidebar extends React.Component {
   }
 
   render() {
-    <div>
-      {this.props.notebooks.map(notebook => {
-        return <liv>{notebook.notebookName}</liv>
-      })}
-    </div>
+    return (
+      <div>
+        {this.props.notebooks.map((notebook,index) => {
+          return (
+            <li key={index}>
+              <i className="fas fa-book"></i>
+              {notebook.notebookName}
+            </li>
+          )
+        })}
+      </div>
+    )
   }
 
 }

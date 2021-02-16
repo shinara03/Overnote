@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className='homepage-container'>
       <SideBarContainer />
-      <div className='homepage-content'>hello</div>
+      <div className='homepage-content'>OVERNOTE HOMEPAGE</div>
     </div>
   )
 }
