@@ -1764,27 +1764,23 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(SessionForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this2 = this;
-
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user).then(function () {
-        return _this2.props.history.push('/notebooks');
-      });
+      this.props.processForm(user);
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this3 = this;
+      var _this2 = this;
 
       return function (e) {
-        return _this3.setState(_defineProperty({}, field, e.target.value));
+        return _this2.setState(_defineProperty({}, field, e.target.value));
       };
     }
   }, {
     key: "getFooter",
     value: function getFooter() {
-      var _this4 = this;
+      var _this3 = this;
 
       var footer;
 
@@ -1792,18 +1788,18 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         footer = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "account-link",
           onClick: function onClick() {
-            _this4.props.clearErrors();
+            _this3.props.clearErrors();
 
-            _this4.props.history.push('/signup');
+            _this3.props.history.push('/signup');
           }
         }, "Create account"));
       } else {
         footer = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "By creating an account, you are agreeing to our Terms of Service and Privacy Policy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an account?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "account-link",
           onClick: function onClick() {
-            _this4.props.clearErrors();
+            _this3.props.clearErrors();
 
-            _this4.props.history.push('/login');
+            _this3.props.history.push('/login');
           }
         }, "Sign in"));
       }
