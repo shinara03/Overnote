@@ -45,12 +45,12 @@ class SideBar extends React.Component {
       <div className='sidebar'>
         <Greeting currentUser={this.props.currentUser} logout={this.props.logout} />
         <div className='sidebar-lists'>
-          <div className='sidebar-home'>
+          {/* <div className='sidebar-home'>
             <Link className='sidebar-home-link' to='/home'>
               <i className="fas fa-home"></i>
               Home
             </Link>
-          </div>
+          </div> */}
           <div className='sidebar-notebooks-text'>
             <div onClick={() => {
                     this.toggleListDropdown();
@@ -58,7 +58,7 @@ class SideBar extends React.Component {
             }}>
             {caretIcon}
             </div>
-            <Link className='sidebar-nb-link' to='/home/notebooks'>
+            <Link className='sidebar-nb-link' to='/notebooks'>
               <i className="fas fa-book"></i>
               Notebooks
             </Link>

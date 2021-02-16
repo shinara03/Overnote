@@ -7,7 +7,7 @@ const NavBar = (props) => {
     //checking if user is logged in 
     if (props.currentUser) {
       navLinks = <>
-        <Link className='navBar-link' to='/home'>My Notes</Link>
+        <Link className='navBar-link' to='/notebooks'>My Notes</Link>
       </>
     } else {
       navLinks = <> 
@@ -24,8 +24,6 @@ const NavBar = (props) => {
             <h1>Overnote</h1>
           </Link>
         <div className='navBar-redirect'>
-          {/* <Link className='navBar-link' to='/login'>Log In</Link>
-          <Link className='navBar-link' to='/signup'>Sign Up</Link> */}
           {navLinks}
         </div>
       </div>

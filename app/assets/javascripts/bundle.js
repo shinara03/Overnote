@@ -317,6 +317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _home_homepage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/homepage */ "./frontend/components/home/homepage.jsx");
+/* harmony import */ var _home_homepage__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_home_homepage__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -336,11 +337,7 @@ var App = function App() {
     component: _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     exact: true,
-    path: "/home",
-    component: _home_homepage__WEBPACK_IMPORTED_MODULE_9__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
-    exact: true,
-    path: "/home/notebooks",
+    path: "/notebooks",
     component: _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["AuthRoute"], {
     exact: true,
@@ -488,26 +485,10 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
 /*!***********************************************!*\
   !*** ./frontend/components/home/homepage.jsx ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar/sidebar_container */ "./frontend/components/home/sidebar/sidebar_container.js");
-
-
-
-var HomePage = function HomePage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "homepage-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "homepage-content"
-  }, "OVERNOTE HOMEPAGE"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (HomePage);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/hyeyoungshin/Desktop/Overnote/frontend/components/home/homepage.jsx'");
 
 /***/ }),
 
@@ -964,13 +945,6 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-lists"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar-home"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        className: "sidebar-home-link",
-        to: "/home"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-home"
-      }), "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-notebooks-text"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
@@ -980,7 +954,7 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         }
       }, caretIcon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "sidebar-nb-link",
-        to: "/home/notebooks"
+        to: "/notebooks"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-book"
       }), "Notebooks")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1808,7 +1782,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
-        return _this2.props.history.push('/home');
+        return _this2.props.history.push('/notebooks');
       });
     }
   }, {
@@ -1964,7 +1938,7 @@ var NavBar = function NavBar(props) {
   if (props.currentUser) {
     navLinks = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       className: "navBar-link",
-      to: "/home"
+      to: "/notebooks"
     }, "My Notes"));
   } else {
     navLinks = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -2576,7 +2550,7 @@ var Auth = function Auth(_ref) {
     exact: exact,
     render: function render(props) {
       return loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/home"
+        to: "/notebooks"
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props);
     }
   });
