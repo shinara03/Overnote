@@ -1,11 +1,27 @@
 import React from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
-import NotebookIndexListItem from './notebook_index_list_Items';
+// import NotebookIndexListItem from './notebook_index_list_Items';
+import { formatDate } from '../../../util/date_util';
 
 class NotebookIndex extends React.Component {
   
+  constructor(props){
+    super(props)
+    this.state = {
+      dropdown: {}
+    }
+  }
+
   componentDidMount() {
     this.props.getAllNotebooks();
+  }
+
+  toggleDropdown(notebookId) {
+    if (this.state.dropdown[notebookId]) {
+      this.setState({dropdown: {[notebookId]: false}})
+    } else {
+      this.setState({dropdown: {[notebookId]: true}})
+    }
   }
 
   render() {
@@ -28,12 +44,39 @@ class NotebookIndex extends React.Component {
           </div>
           <div className='notebook-body'>
             {this.props.notebooks.map(notebook => {
+              let dropdownClass = this.state.dropdown[notebook.id] ? 
+                                  'notebook-actions-dropdown' : 
+                                  'notebook-actions';
               return (
-                <NotebookIndexListItem key={notebook.id} 
-                    notebook={notebook} 
-                    openModal={this.props.openModal}  />
-              )
-            })}
+                <ul key={notebook.id}>
+                  <li className='notebook-title'>
+                    {/* <p><i className="fas fa-caret-right"></i></p> */}
+                    <p><i className="fas fa-book"></i></p>
+                    <p>{notebook.notebookName}</p>
+                  </li>
+                  <li>{formatDate(notebook.createdAt)}</li>
+                  <li>{formatDate(notebook.updatedAt)}</li>
+                  <div className='notebook-dropdown'>
+                    <div value={notebook.id} onClick={()=> this.toggleDropdown(notebook.id)}>
+                      <i className="fas fa-ellipsis-h"> </i> 
+                    </div>
+                    <div className={dropdownClass}>
+                      <button onClick={() => {
+                        this.props.openModal('rename notebook', notebook.id)
+                        this.toggleDropdown(notebook.id)
+                      }}>
+                        Rename notebook
+                      </button>
+                      <button onClick={() => {
+                        this.props.openModal('delete notebook', notebook.id)
+                        this.toggleDropdown(notebook.id)
+                      }}>
+                        Delete notebook
+                      </button>
+                    </div>
+                  </div>
+                </ul>
+            )})}
           </div>
         </div>
       </div>
