@@ -8,7 +8,7 @@ class RenameNBModal extends React.Component {
     super(props);
     this.state = {
       id: this.props.notebookId,
-      notebook_name: "",
+      notebook_name: this.props.notebooks[this.props.notebookId].notebookName,
       author_id: this.props.authorId
     }
     

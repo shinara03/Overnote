@@ -1588,7 +1588,7 @@ var RenameNBModal = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       id: _this.props.notebookId,
-      notebook_name: "",
+      notebook_name: _this.props.notebooks[_this.props.notebookId].notebookName,
       author_id: _this.props.authorId
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
