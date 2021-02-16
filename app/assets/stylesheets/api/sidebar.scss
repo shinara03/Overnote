@@ -72,13 +72,25 @@
 .sidebar {
   width: 300px;
   background-color: black;
-  // height: 100vh;
+  font-family: 'Barlow', sans-serif;
+  display: grid;
+  grid-template-rows: 100px 40px 1fr;
+  grid-template-columns: 300px;
+  color: #CCCCCC;
+}
+
+.sidebar-lists {
+  grid-row-start: 3;
+}
+
+.sidebar-lists div:hover {
+  background-color: #333333
 }
 
 .user-info {
   display: flex;
   margin: 20px;
-  color: white;
+  // color: white;
 }
 
 .user-info > i {
@@ -94,11 +106,44 @@
 .logout-btn {
   border: none;
   background: transparent;
-  color: white;
+  color: #CCCCCC;
   cursor: pointer;
   margin-left: 10px;
 }
 
+.sidebar-home {
+  background: transparent;
+  margin-top: 20px;
+  padding: 10px;
+  padding-left: 24px;
+  display: flex;
+}
+
+.sidebar-home i {
+  margin-right: 10px;
+}
+// .sidebar-home-btn {
+//   border: none;
+//   color: white;
+//   background: transparent;
+//   font-size: 16px;
+// }
+
 .sidebar-notebooks {
-  color: white;
+  display: flex;
+  padding: 10px;
+}
+
+.sidebar-notebooks i {
+  margin-right: 10px;
+}
+
+.sidebar-home-link {
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+.sidebar-nb-link {
+  text-decoration: none;
+  color: #CCCCCC;
 }

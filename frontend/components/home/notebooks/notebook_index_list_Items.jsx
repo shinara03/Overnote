@@ -5,25 +5,29 @@ class NotebookIndexListItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      dropdown: {}
+      dropdown: false
     };
 
-    // this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
 
-  // toggleDropdown() {
-  //   if (this.state.dropdown[notebook_id] === false){
-  //     this.setState({ dropdown: { [notebook.id]: true } })
-  //   } else {
-  //     this.setState({ dropdown: { [notebook.id]: false } })
-  //   }
-  // }
+  toggleDropdown(e) {
+    // debugger
+    // const notebook_id = this.props.notebook.id;
+    if (!this.state.dropdown){
+      this.setState({ dropdown: true })
+    } else {
+      this.setState({ dropdown: false })
+    }
+  }
 
   render() {
     const {notebook} = this.props;
     const {dropdown} = this.state;
+    let dropdownClass = dropdown ? 'notebook-actions-dropdown' : 'notebook-actions';
 
+    // debugger
     return (
       <ul>
         <li className='notebook-title'>
@@ -34,8 +38,8 @@ class NotebookIndexListItem extends React.Component {
         <li>{formatDate(notebook.created_at)}</li>
         <li>{formatDate(notebook.updated_at)}</li>
         <div className='notebook-dropdown'>
-          <i className="fas fa-ellipsis-h"> </i>
-          <div className={`notebook-actions ${dropdown.notebook_id ? 'dropdown' : ''}`}>
+          <div value={notebook.id} onClick={this.toggleDropdown}><i className="fas fa-ellipsis-h"> </i> </div>
+          <div className={dropdownClass}>
             <button onClick={() => this.props.openModal('rename notebook', notebook.id)}>
               Rename notebook
             </button>

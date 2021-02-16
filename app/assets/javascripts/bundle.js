@@ -644,26 +644,36 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      dropdown: {}
-    }; // this.toggleDropdown = this.toggleDropdown.bind(this);
-
+      dropdown: false
+    };
+    _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this));
     return _this;
-  } // toggleDropdown() {
-  //   if (this.state.dropdown[notebook_id] === false){
-  //     this.setState({ dropdown: { [notebook.id]: true } })
-  //   } else {
-  //     this.setState({ dropdown: { [notebook.id]: false } })
-  //   }
-  // }
-
+  }
 
   _createClass(NotebookIndexListItem, [{
+    key: "toggleDropdown",
+    value: function toggleDropdown(e) {
+      // debugger
+      // const notebook_id = this.props.notebook.id;
+      if (!this.state.dropdown) {
+        this.setState({
+          dropdown: true
+        });
+      } else {
+        this.setState({
+          dropdown: false
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
       var notebook = this.props.notebook;
       var dropdown = this.state.dropdown;
+      var dropdownClass = dropdown ? 'notebook-actions-dropdown' : 'notebook-actions'; // debugger
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "notebook-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -672,10 +682,13 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-book"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, notebook.notebook_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.created_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_1__["formatDate"])(notebook.updated_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notebook-dropdown"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        value: notebook.id,
+        onClick: this.toggleDropdown
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-ellipsis-h"
-      }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "notebook-actions ".concat(dropdown.notebook_id ? 'dropdown' : '')
+      }, " "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: dropdownClass
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.props.openModal('rename notebook', notebook.id);
@@ -707,6 +720,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _greeting_greeting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/greeting */ "./frontend/components/home/greeting/greeting.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -717,12 +732,24 @@ var SideBar = function SideBar(props) {
     currentUser: props.currentUser,
     logout: props.logout
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-lists"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "sidebar-home-link",
+    to: "/home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-home"
+  }), "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sidebar-notebooks"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-caret-right"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "sidebar-nb-link",
+    to: "/home/notebooks"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-book"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Notebooks")));
+  }), "Notebooks"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SideBar);
