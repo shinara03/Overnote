@@ -37,10 +37,12 @@ class NotebookIndexListItem extends React.Component {
         <div className='notebook-dropdown'>
           <div value={notebook.id} onClick={this.toggleDropdown}><i className="fas fa-ellipsis-h"> </i> </div>
           <div className={dropdownClass}>
-            <button onClick={() => this.props.openModal('rename notebook', notebook.id)}>
+            <button onClick={() => { this.props.openModal('rename notebook', notebook.id)
+                                     this.toggleDropdown()}}>
               Rename notebook
             </button>
-            <button onClick={() => this.props.openModal('delete notebook', notebook.id)}>
+            <button onClick={() => { this.props.openModal('delete notebook', notebook.id)
+                                     this.toggleDropdown()}}>
               Delete notebook
             </button>
           </div>

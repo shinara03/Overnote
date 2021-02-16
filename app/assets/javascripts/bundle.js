@@ -792,11 +792,15 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
         className: dropdownClass
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this2.props.openModal('rename notebook', notebook.id);
+          _this2.props.openModal('rename notebook', notebook.id);
+
+          _this2.toggleDropdown();
         }
       }, "Rename notebook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this2.props.openModal('delete notebook', notebook.id);
+          _this2.props.openModal('delete notebook', notebook.id);
+
+          _this2.toggleDropdown();
         }
       }, "Delete notebook"))));
     }
