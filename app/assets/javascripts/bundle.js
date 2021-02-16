@@ -257,6 +257,7 @@ var logoutCurrentUser = function logoutCurrentUser() {
 };
 
 var receiveErrors = function receiveErrors(errors) {
+  // debugger
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
@@ -2272,6 +2273,7 @@ __webpack_require__.r(__webpack_exports__);
 var sessionErrorReducer = function sessionErrorReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  // debugger
   Object.freeze(state);
 
   switch (action.type) {
