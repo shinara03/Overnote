@@ -30,7 +30,6 @@ class Greeting extends React.Component {
           </div>
           <button className={dropdownClass} onClick={this.props.logout}>
             Sign out 
-            <div>{this.props.currentUser.email}</div>
           </button>
         </div>
     )  
