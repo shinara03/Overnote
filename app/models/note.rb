@@ -1,6 +1,6 @@
 class Note < ApplicationRecord
   validates :title, presence: true
-  validates :notebook_id, presence: true, uniqueness: true
+  validates :notebook_id, presence: true
   
   belongs_to :notebook,
     primary_key: :id, 

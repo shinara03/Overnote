@@ -1988,13 +1988,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
-/* harmony import */ var _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/notebook_api_util */ "./frontend/util/notebook_api_util.js");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
-/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
+/* harmony import */ var _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/notebook_api_util */ "./frontend/util/notebook_api_util.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./actions/notebook_actions */ "./frontend/actions/notebook_actions.js");
+/* harmony import */ var _util_note_api_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./util/note_api_util */ "./frontend/util/note_api_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2017,19 +2019,19 @@ document.addEventListener("DOMContentLoaded", function () {
         id: window.currentUser.id
       }
     };
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])(preloadedState);
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
     delete window.currentUser;
   } else {
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 
   var root = document.getElementById("root");
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root); //Testing
 
-  window.APIUtil = _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__;
-  window.nbUtil = _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_3__;
+  window.APIUtil = _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__;
+  window.nbUtil = _util_notebook_api_util__WEBPACK_IMPORTED_MODULE_5__;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["login"];
@@ -2040,6 +2042,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.updateNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["updateNotebook"];
   window.deleteNotebook = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["deleteNotebook"];
   window.receiveNotebooks = _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_7__["receiveNotebooks"];
+  window.NUtil = _util_note_api_util__WEBPACK_IMPORTED_MODULE_8__;
 });
 
 /***/ }),
@@ -2442,6 +2445,59 @@ var formatDate = function formatDate(date) {
   }), " \n          ").concat(newDate.getDate(), " ").concat(newDate.getFullYear());
 };
 var calculateDate = function calculateDate(date) {};
+
+/***/ }),
+
+/***/ "./frontend/util/note_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/note_api_util.js ***!
+  \****************************************/
+/*! exports provided: fetchNotes, fetchNote, createNote, updateNote, deleteNote */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNotes", function() { return fetchNotes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNote", function() { return fetchNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNote", function() { return createNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateNote", function() { return updateNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteNote", function() { return deleteNote; });
+var fetchNotes = function fetchNotes() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/notes'
+  });
+};
+var fetchNote = function fetchNote(id) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/notes/".concat(id)
+  });
+};
+var createNote = function createNote(note) {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/notes',
+    data: {
+      note: note
+    }
+  });
+};
+var updateNote = function updateNote(note) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "/api/notes/".concat(note.id),
+    data: {
+      note: note
+    }
+  });
+};
+var deleteNote = function deleteNote(id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/notes/".concat(id)
+  });
+};
 
 /***/ }),
 

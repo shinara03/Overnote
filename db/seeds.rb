@@ -8,6 +8,7 @@
 
 User.destroy_all
 Notebook.destroy_all
+Note.destroy_all
 
 #Users
 user1 = User.create({email: 'shin1@gmail.com', password: "123456"})
