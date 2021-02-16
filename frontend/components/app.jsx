@@ -8,6 +8,7 @@ import NavBarContainer from './splash/navbar/navbar_container';
 import ErrorPage from './errorPage/error_page';
 import NotebookIndexContainer from './home/notebooks/notebook_index_container';
 import Modal from './modal/modal';
+import NoteIndexContainer from './home/notes/note_index_container';
 // import HomePage from './home/homepage';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={NavBarContainer}/>
         {/* <ProtectedRoute exact path='/home' component={HomePage}/> */}
+        <ProtectedRoute exact path='/notes' component={NoteIndexContainer} />
         <ProtectedRoute exact path='/notebooks' component={NotebookIndexContainer}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
