@@ -1,6 +1,6 @@
 class Notebook < ApplicationRecord
-  validates :notebook_name, presence: true, uniqueness: true
   validates :author_id, presence: true
+  validates :notebook_name, presence: true, uniqueness: {scope: :author_id}
 
   belongs_to :author,
     primary_key: :id,

@@ -316,8 +316,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./errorPage/error_page */ "./frontend/components/errorPage/error_page.jsx");
 /* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _home_homepage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/homepage */ "./frontend/components/home/homepage.jsx");
-/* harmony import */ var _home_homepage__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_home_homepage__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -327,8 +325,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
+ // import HomePage from './home/homepage';
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -478,17 +475,6 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Greeting);
-
-/***/ }),
-
-/***/ "./frontend/components/home/homepage.jsx":
-/*!***********************************************!*\
-  !*** ./frontend/components/home/homepage.jsx ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/hyeyoungshin/Desktop/Overnote/frontend/components/home/homepage.jsx'");
 
 /***/ }),
 

@@ -8,7 +8,7 @@ import NavBarContainer from './splash/navbar/navbar_container';
 import ErrorPage from './errorPage/error_page';
 import NotebookIndexContainer from './home/notebooks/notebook_index_container';
 import Modal from './modal/modal';
-import HomePage from './home/homepage';
+// import HomePage from './home/homepage';
 
 const App = () => {
   return (
