@@ -13,8 +13,6 @@ class NotebookIndexListItem extends React.Component {
 
 
   toggleDropdown(e) {
-    // debugger
-    // const notebook_id = this.props.notebook.id;
     if (!this.state.dropdown){
       this.setState({ dropdown: true })
     } else {
@@ -27,7 +25,6 @@ class NotebookIndexListItem extends React.Component {
     const {dropdown} = this.state;
     let dropdownClass = dropdown ? 'notebook-actions-dropdown' : 'notebook-actions';
 
-    // debugger
     return (
       <ul>
         <li className='notebook-title'>

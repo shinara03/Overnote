@@ -573,18 +573,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     getAllNotebooks: function getAllNotebooks() {
       return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_2__["fetchNotebooks"])());
     },
-    getOneNotebook: function getOneNotebook(id) {
-      return disapatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_2__["fetchNotebook"])(id));
-    },
-    makeNotebook: function makeNotebook(notebook) {
-      return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_2__["createNotebook"])(notebook));
-    },
-    editNotebook: function editNotebook(notebook) {
-      return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_2__["updateNotebook"])(notebook));
-    },
-    deleteNotebook: function deleteNotebook(notebook) {
-      return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_2__["deleteNotebook"])(notebook));
-    },
     openModal: function openModal(modal, notebookId) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])(modal, notebookId));
     }
@@ -653,8 +641,6 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
   _createClass(NotebookIndexListItem, [{
     key: "toggleDropdown",
     value: function toggleDropdown(e) {
-      // debugger
-      // const notebook_id = this.props.notebook.id;
       if (!this.state.dropdown) {
         this.setState({
           dropdown: true
@@ -672,8 +658,7 @@ var NotebookIndexListItem = /*#__PURE__*/function (_React$Component) {
 
       var notebook = this.props.notebook;
       var dropdown = this.state.dropdown;
-      var dropdownClass = dropdown ? 'notebook-actions-dropdown' : 'notebook-actions'; // debugger
-
+      var dropdownClass = dropdown ? 'notebook-actions-dropdown' : 'notebook-actions';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "notebook-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -723,7 +708,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
-
+ // import NotebookSidebarContainer from '../notebooks/notebook_sidebar_container';
 
 var SideBar = function SideBar(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
