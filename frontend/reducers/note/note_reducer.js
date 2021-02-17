@@ -5,7 +5,7 @@ const noteReducer = (state={}, action) => {
   
   switch(action.type) {
     case RECEIVE_NOTES:
-      return Object.assign({}, action.notes);
+      return Object.assign({}, state, action.notes);
 
     case RECEIVE_NOTE:
       return Object.assign({}, state, {[action.note.id]: action.note});

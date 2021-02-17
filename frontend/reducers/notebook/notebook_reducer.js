@@ -15,6 +15,7 @@ const notebookReducer = (state={}, action) => {
       delete nextState[action.notebook.id];
       return nextState;
 
+
     default:
       return state;
   }

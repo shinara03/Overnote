@@ -4,9 +4,9 @@ import {makeNotebooksArr} from '../../../reducers/notebook/selector';
 import {fetchNotebooks} from '../../../actions/notebook_actions';
 
 class NotebookSidebar extends React.Component {
-  // componentDidMount() {
-  //   this.props.getAllNotebooks();
-  // }
+  componentDidMount() {
+    this.props.getAllNotebooks();
+  }
 
   render() {
     return (

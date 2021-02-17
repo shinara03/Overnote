@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
-import {makeNotebooksArr} from '../../../reducers/notebook/selector';
+import {makeNoteArr} from '../../../reducers/note/note_selector';
 import NoteIndex from './note_index';
 import {fetchNotes} from '../../../actions/note_actions';
 
 
 const mapStateToProps = state => {
   return {
-    notes: makeNotebooksArr(state.entities),
+    notes: makeNoteArr(state.entities),
   }
 }
 

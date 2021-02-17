@@ -6,7 +6,7 @@ import noteReducer from './note/note_reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   notebooks: notebookReducer,
-  note: noteReducer
+  notes: noteReducer
 })
 
 export default entitiesReducer;
