@@ -116,6 +116,7 @@
 .sidebar-list-open {
   list-style: none;
   font-size: 14px;
+  // position: relative;
 
   li {
     padding: 5px 30px;
@@ -142,3 +143,21 @@
   margin-right: 10px;
 }
 
+.sidebar-notes {
+  padding: 11px 0;
+}
+
+.sidebar-notes:hover {
+  background-color: #333333;
+}
+
+.sidebar-notes-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #CCCCCC;
+  margin-left: 27px;
+
+  i {
+    margin-right: 10px;
+  }
+}

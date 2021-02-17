@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
+import { formatDate } from '../../../util/date_util';
 
 class NoteIndex extends React.Component {
 
@@ -20,8 +21,13 @@ class NoteIndex extends React.Component {
             {this.props.notes.map(note => {
               return (
                 <li key={note.id} className='notes-index-items'>
-                  <p>{note.title}</p>
-                  <p>{note.body}</p>
+                  <div className='notes-content'> 
+                    <div>
+                      <h1>{note.title}</h1>
+                      <h2>{note.body}</h2>
+                    </div>
+                    <h3>{formatDate(note.updatedAt)}</h3>
+                  </div>
                 </li>
               )
             })}

@@ -51,6 +51,13 @@ class SideBar extends React.Component {
               Home
             </Link>
           </div> */}
+          <div className='sidebar-notes'>
+            <Link className='sidebar-notes-link' to='/notes'>
+              {/* <i className="far fa-sticky-note"></i> */}
+              <i className="fas fa-sticky-note"></i>
+              All Notes
+            </Link>
+          </div> 
           <div className='sidebar-notebooks-text'>
             <div onClick={() => {
                     this.toggleListDropdown();
@@ -65,7 +72,7 @@ class SideBar extends React.Component {
           </div>
           <div className={dropdownClass}>
             <NotebookSidebar />
-          </div>   
+          </div>  
         </div>
   
       </div>
