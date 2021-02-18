@@ -1,11 +1,27 @@
 import React from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
 import {formatDate} from '../../../util/date_util';
+import NoteShowContainer from '../notes/note_show_container';
 
 class NotebookShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // currentNoteId : null
+      currentNote: null
+    }
+
+    // this.setCurrentNote = this.setCurrentNote.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchNotes();
     this.props.fetchNotebook(this.props.notebookId);
+  }
+
+  setCurrentNote(note) {
+    this.setState({currentNote: note});
   }
   
   render() {
@@ -21,7 +37,8 @@ class NotebookShow extends React.Component {
           <div className='notes-index'>
             {this.props.notes.map(note => {
               return (
-                <li key={note.id} className='notes-index-items'>
+                <li onClick={() => this.setCurrentNote(note)} 
+                    key={note.id} className='notes-index-items'>
                   <div className='notes-content'>
                     <div>
                       <h1>{note.title}</h1>
@@ -34,7 +51,7 @@ class NotebookShow extends React.Component {
             })}
           </div>
           <div>
-            
+            <NoteShowContainer note={this.state.currentNote}/>
           </div>
         </div>
       </div>
