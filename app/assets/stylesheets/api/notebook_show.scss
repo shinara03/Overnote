@@ -1,0 +1,13 @@
+.nb-show-container {
+  display: grid;
+  grid-template-columns: 300px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.nb-show-list {
+  grid-column: 2/-1;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 99px 1fr;
+  grid-template-columns: 370px 1fr;
+}

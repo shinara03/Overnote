@@ -102,10 +102,17 @@
   display: flex;
   flex-direction: row;
   color: #555555;
+  
 }
 
 .notebook-title p {
   margin: 0 5px;
+}
+
+.notebook-redirect{
+  text-decoration: none;
+  color: #555555;
+  cursor: pointer;
 }
 
 .notebook-body .notebook-dropdown {

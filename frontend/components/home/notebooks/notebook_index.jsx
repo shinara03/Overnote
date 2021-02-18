@@ -2,6 +2,7 @@ import React from 'react';
 import SideBarContainer from '../sidebar/sidebar_container';
 // import NotebookIndexListItem from './notebook_index_list_Items';
 import { formatDate } from '../../../util/date_util';
+import { Link } from 'react-router-dom';
 
 class NotebookIndex extends React.Component {
   
@@ -52,7 +53,9 @@ class NotebookIndex extends React.Component {
                   <li className='notebook-title'>
                     {/* <p><i className="fas fa-caret-right"></i></p> */}
                     <p><i className="fas fa-book"></i></p>
-                    <p>{notebook.notebookName}</p>
+                    <Link className='notebook-redirect' to={`/notebooks/${notebook.id}`}>
+                      <p>{notebook.notebookName}</p>
+                    </Link>
                   </li>
                   <li>{formatDate(notebook.createdAt)}</li>
                   <li>{formatDate(notebook.updatedAt)}</li>
