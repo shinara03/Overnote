@@ -808,18 +808,20 @@ var NotebookShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(NotebookShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchNotebook(this.props.notebookId);
+    }
+  }, {
     key: "render",
-    value: // componentDidMount() {
-    //   this.props.fetchNotebook(this.props.notebookId)
-    // }
-    function render() {
+    value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nb-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nb-show-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nb-show-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.notebook.notebookName))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.notebook.notebookName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.notes.length, " notes"))));
     }
   }]);
 
@@ -843,6 +845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_notebook_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/notebook_actions */ "./frontend/actions/notebook_actions.js");
 /* harmony import */ var _notebook_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./notebook_show */ "./frontend/components/home/notebooks/notebook_show.jsx");
 /* harmony import */ var _reducers_notebook_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../reducers/notebook/selector */ "./frontend/reducers/notebook/selector.js");
+/* harmony import */ var _actions_note_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../actions/note_actions */ "./frontend/actions/note_actions.js");
+
 
 
 
@@ -850,12 +854,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var notebookId = parseInt(ownProps.match.params.notebookId);
-  var notebook = Object(_reducers_notebook_selector__WEBPACK_IMPORTED_MODULE_3__["selectNotebook"])(state.entities, notebookId); // const notes = selectNotesforNotebook(state.entities, notebook)
-
+  var notebook = Object(_reducers_notebook_selector__WEBPACK_IMPORTED_MODULE_3__["selectNotebook"])(state.entities, notebookId);
+  var notes = Object(_reducers_notebook_selector__WEBPACK_IMPORTED_MODULE_3__["selectNotesforNotebook"])(state.entities, notebook);
   return {
     notebookId: notebookId,
-    notebook: notebook // notes
-
+    notebook: notebook,
+    notes: notes
   };
 };
 
@@ -863,6 +867,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchNotebook: function fetchNotebook(id) {
       return dispatch(Object(_actions_notebook_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNotebook"])(id));
+    },
+    fetchNotes: function fetchNotes() {
+      return dispatch(Object(_actions_note_actions__WEBPACK_IMPORTED_MODULE_4__["fetchNotes"])());
     }
   };
 };
