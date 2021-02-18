@@ -51,7 +51,7 @@ class SideBar extends React.Component {
               Home
             </Link>
           </div> */}
-          <div className='sidebar-notes'>
+          <div>
             <Link className='sidebar-notes-link' to='/notes'>
               {/* <i className="far fa-sticky-note"></i> */}
               <i className="fas fa-sticky-note"></i>
@@ -59,12 +59,12 @@ class SideBar extends React.Component {
             </Link>
           </div> 
           <div className='sidebar-notebooks-text'>
-            <div onClick={() => {
+            {/* <div onClick={() => {
                     this.toggleListDropdown();
                     this.toggleCaret();
             }}>
             {caretIcon}
-            </div>
+            </div> */}
             <Link className='sidebar-nb-link' to='/notebooks'>
               <i className="fas fa-book"></i>
               Notebooks

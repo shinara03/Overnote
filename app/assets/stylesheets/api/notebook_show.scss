@@ -11,3 +11,22 @@
   grid-template-rows: 99px 1fr;
   grid-template-columns: 370px 1fr;
 }
+
+.nb-show-header {
+  padding: 0px 25px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  border: 1.5px solid #E6E6E6;
+  background-color: #F8F8F8;
+
+  h1 {
+    font-size: 20px;
+    margin: 21px 0px;
+    color: #333333;
+  }
+
+  h2 {
+    color: #666666;
+    font-size: 13px;
+  }
+}

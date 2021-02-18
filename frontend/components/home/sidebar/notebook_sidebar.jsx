@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {makeNotebooksArr} from '../../../reducers/notebook/selector';
 import {fetchNotebooks} from '../../../actions/notebook_actions';
+import { Link } from 'react-router-dom';
+import { fetchNotes } from '../../../actions/note_actions';
 
 class NotebookSidebar extends React.Component {
   componentDidMount() {
@@ -13,10 +15,12 @@ class NotebookSidebar extends React.Component {
       <div>
         {this.props.notebooks.map((notebook,index) => {
           return (
-            <li key={index}>
-              <i className="fas fa-book"></i>
-              {notebook.notebookName}
-            </li>
+            <Link className='sidebar-nb-show-link' to={`/notebooks/${notebook.id}`} key={index}>
+              <div>
+                <i className="fas fa-book"></i>
+                {notebook.notebookName}
+              </div>
+            </Link>
           )
         })}
       </div>
@@ -35,7 +39,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllNotebooks: () => dispatch(fetchNotebooks())
+    getAllNotebooks: () => dispatch(fetchNotebooks()),
   }
 }
 
