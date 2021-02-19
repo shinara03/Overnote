@@ -1,24 +1,3 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![alt_text](https:https://github.com/shinara03/Overnote/tree/master/app/assets/images/readMe/Screen Shot 2021-02-19 at 9.24.44 AM.png)
