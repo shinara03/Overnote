@@ -19,7 +19,7 @@ Overnote is built on Ruby on Rails for backend and React and Redux for frontend.
 
 ![alt_text](https://github.com/shinara03/Overnote/blob/master/app/assets/images/readMe/overnote.png?raw=true)
 
-
+![alt_text](https://github.com/shinara03/Overnote/blob/master/app/assets/images/readMe/notebooks.png?raw=true)
 
 
  <!-- With the base of Rails for backend and React and Redux for frontend,  -->
