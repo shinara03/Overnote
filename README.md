@@ -1,6 +1,4 @@
 
-![alt_text](https://github.com/shinara03/Overnote/blob/master/app/assets/images/readMe/overnote.png?raw=true)
-
 # Overnote 
 
 <!-- ## [Overnote Live link](https://evernote-clone-fsp.herokuapp.com/#/) -->
@@ -17,6 +15,9 @@ Overnote is built on Ruby on Rails for backend and React and Redux for frontend.
 * Font Awesome
 
 
+# Site
+
+![alt_text](https://github.com/shinara03/Overnote/blob/master/app/assets/images/readMe/overnote.png?raw=true)
 
 
 
