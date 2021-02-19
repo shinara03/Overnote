@@ -176,7 +176,7 @@
   background-color: #1B1B1B;
   font-family: 'Barlow', sans-serif;
   display: grid;
-  grid-template-rows: 100px 40px 1fr;
+  grid-template-rows: 119px 40px 1fr;
   grid-template-columns: 300px;
   color: #CCCCCC;
 }
@@ -188,7 +188,7 @@
 .user-info {
   display: flex;
   margin: 20px;
-  // color: white;
+  margin-bottom: 25px;
 }
 
 .user-info > i {
@@ -213,8 +213,8 @@
   border: 1px solid #333333;
   background:  #333333;
   color: #CCCCCC;
-  display: flex;
-  padding: 10px 117px;
+  // display: flex;
+  padding: 10px 119px;
   border-radius: 3px;
   margin-left: 6px;
   cursor: pointer;
@@ -226,7 +226,7 @@
   grid-row-start: 3;
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 16px;
 
   span{
     padding: 13px;
