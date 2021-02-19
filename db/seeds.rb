@@ -45,7 +45,10 @@ note3 = Note.create({title: 'Note 3', body: "Feugiat nisl pretium fusce id velit
   Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.
   Nullam ac tortor vitae purus faucibus ornare suspendisse sed.
   Nunc faucibus a pellentesque sit amet porttitor eget dolor.
-  Sit amet tellus cras adipiscing.", notebook_id: notebook1.id})
+  Magna etiam tempor orci eu lobortis elementum. Dictum fusce ut placerat orci. 
+  Facilisi cras fermentum odio eu feugiat pretium. 
+  In ante metus dictum at tempor commodo. 
+  Massa vitae tortor condimentum lacinia quis vel eros donec.", notebook_id: notebook1.id})
 
 note4 = Note.create({title: 'Note4', body: "Adipiscing diam donec adipiscing tristique. 
   Sollicitudin aliquam ultrices sagittis orci a scelerisque.
@@ -54,7 +57,9 @@ note4 = Note.create({title: 'Note4', body: "Adipiscing diam donec adipiscing tri
   Fusce id velit ut tortor pretium viverra suspendisse potenti. 
   Aliquet bibendum enim facilisis gravida neque. 
   In fermentum posuere urna nec tincidunt praesent semper feugiat nibh.Mi proin sed libero enim sed faucibus.
-  Lectus nulla at volutpat diam ut venenatis tellus. Ante in nibh mauris cursus", notebook_id: notebook1.id})
+  Lectus nulla at volutpat diam ut venenatis tellus.
+  Ante in nibh mauris cursus. Nunc sed augue lacus viverra vitae congue eu consequat.
+  Auctor urna nunc id cursus metus aliquam eleifend.", notebook_id: notebook1.id})
 
 note5 = Note.create({title: 'Note5', body: 'note 5 body', notebook_id: notebook1.id})
 note6 = Note.create({title: 'Note6', body: 'note 6 body', notebook_id: notebook1.id})
@@ -88,12 +93,7 @@ note21 = Note.create({title: 'Note 12', body: "Donec ultrices tincidunt arcu non
   Nunc aliquet bibendum enim facilisis gravida neque convallis. 
   Vitae et leo duis ut diam quam. Nullam non nisi est sit. 
   Convallis a cras semper auctor neque vitae tempus quam pellentesque. 
-  Lorem ipsum dolor sit amet consectetur. Hendrerit dolor magna eget est lorem ipsum. 
-  Ullamcorper morbi tincidunt ornare massa.Tristique senectus et netus et malesuada. 
-  Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. 
-  Feugiat in ante metus dictum at tempor commodo ullamcorper.
-   Mi bibendum neque egestas congue quisque. Duis ut diam quam nulla. 
-   Volutpat diam ut venenat", notebook_id: notebook2.id})
+  Lorem ipsum dolor sit amet consectetur. Hendrerit dolor magna eget est lorem ipsum.", notebook_id: notebook2.id})
 
 # Notes under notebook3
 
