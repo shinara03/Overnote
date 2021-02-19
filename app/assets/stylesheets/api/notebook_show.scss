@@ -5,11 +5,12 @@
 }
 
 .nb-show-list {
-  grid-column: 2/-1;
+  // grid-column: 2/-1;
   height: 100vh;
   display: grid;
-  grid-template-rows: 99px 1fr;
-  grid-template-columns: 370px 1fr;
+  grid-template-rows: 99px;
+  grid-template-columns: 370px;
+  grid-column: 2;
 }
 
 .nb-show-header {

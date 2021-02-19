@@ -400,12 +400,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/notes/note_index_container */ "./frontend/components/home/notes/note_index_container.js");
 /* harmony import */ var _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/notebooks/notebook_show_container */ "./frontend/components/home/notebooks/notebook_show_container.js");
+/* harmony import */ var _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/notes/note_show_container */ "./frontend/components/home/notes/note_show_container.js");
 
 
 
 
 
  // import SideBarContainer from './home/sidebar/sidebar_container';
+
 
 
 
@@ -443,7 +445,10 @@ var App = function App() {
     component: _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/404"
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+    path: "/notebooks/:notebookId/:noteId",
+    component: _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -489,83 +494,20 @@ var ErrorPage = function ErrorPage() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
  // import { Link } from 'react-router-dom';
 
-var Greeting = /*#__PURE__*/function (_React$Component) {
-  _inherits(Greeting, _React$Component);
-
-  var _super = _createSuper(Greeting);
-
-  function Greeting(props) {
-    var _this;
-
-    _classCallCheck(this, Greeting);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      LOdropdown: false
-    };
-    _this.toggleLODropdown = _this.toggleLODropdown.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Greeting, [{
-    key: "toggleLODropdown",
-    value: function toggleLODropdown() {
-      if (!this.state.LOdropdown) {
-        this.setState({
-          LOdropdown: true
-        });
-      } else {
-        this.setState({
-          LOdropdown: false
-        });
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var dropdownClass = this.state.LOdropdown ? 'LOdropdown-open' : 'LOdropdown-hidden';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar-user"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.toggleLODropdown,
-        className: "user-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user-circle"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-angle-down"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: dropdownClass,
-        onClick: this.props.logout
-      }, "Sign out"));
-    }
-  }]);
-
-  return Greeting;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+var Greeting = function Greeting(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-user"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "user-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-user-circle"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.currentUser.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "LOdropdown-open",
+    onClick: props.logout
+  }, "Sign out"));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Greeting);
 
@@ -773,6 +715,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sidebar/sidebar_container */ "./frontend/components/home/sidebar/sidebar_container.js");
 /* harmony import */ var _util_date_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../util/date_util */ "./frontend/util/date_util.js");
 /* harmony import */ var _notes_note_show_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../notes/note_show_container */ "./frontend/components/home/notes/note_show_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -800,23 +743,18 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var NotebookShow = /*#__PURE__*/function (_React$Component) {
   _inherits(NotebookShow, _React$Component);
 
   var _super = _createSuper(NotebookShow);
 
   function NotebookShow(props) {
-    var _this;
-
     _classCallCheck(this, NotebookShow);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      // currentNoteId : null
-      currentNote: null
-    }; // this.setCurrentNote = this.setCurrentNote.bind(this);
-
-    return _this;
+    return _super.call(this, props); // this.state = {
+    //   currentNote: null
+    // }
   }
 
   _createClass(NotebookShow, [{
@@ -829,13 +767,18 @@ var NotebookShow = /*#__PURE__*/function (_React$Component) {
     key: "setCurrentNote",
     value: function setCurrentNote(note) {
       this.setState({
+        hasNote: true,
         currentNote: note
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
+
+      if (!this.props.notes) {
+        return null;
+      }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nb-show-container"
@@ -846,17 +789,25 @@ var NotebookShow = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.notebook.notebookName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.notes.length, " notes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notes-index"
       }, this.props.notes.map(function (note) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          onClick: function onClick() {
-            return _this2.setCurrentNote(note);
-          },
-          key: note.id,
-          className: "notes-index-items"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "notes-content"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, note.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, note.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(note.updatedAt))));
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notes_note_show_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        note: this.state.currentNote
+        return (
+          /*#__PURE__*/
+          // <li key={note.id} className='notes-index-items'>
+          //   <div className='notes-content'>
+          //     <div>
+          //       <h1>{note.title}</h1>
+          //       <h2>{note.body}</h2>
+          //     </div>
+          //     <h3>{formatDate(note.updatedAt)}</h3>
+          //   </div>
+          // </li>
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+            key: note.id,
+            className: "note-show-link",
+            to: "/notebooks/".concat(_this.props.notebookId, "/").concat(note.id)
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "notes-content"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, note.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, note.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(note.updatedAt))))
+        );
       }))));
     }
   }]);
@@ -1067,29 +1018,106 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-
+ // class NoteShow extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     // console.log('hi')
+//     // this.state = {
+//     //   id: this.props.note.id,
+//     //   title: this.props.note.title,
+//     //   body: this.props.note.body,
+//     //   notebook_id: this.props.note.notebookId
+//     // }
+//     // this.state = {
+//     //   id: this.props.note ? this.props.note.id : '',
+//     //   title: this.props.note ? this.props.note.title : '',
+//     //   body: this.props.note ? this.props.note.body : '',
+//     //   notebook_id: this.props.note ? this.props.note.notebook_id : ''
+//     // }
+//     // this.state = {
+//     //   id: '',
+//     //   title: '',
+//     //   body: '',
+//     //   notebook_id: ''
+//     // }
+//     // this.handleChange =this.handleChange.bind(this)
+//   }
+//   handleChange(field) {
+//     return e => this.setState({ [field]: e.currentTarget.value })
+//   }
+//   render() {
+//     // if(this.props.note === null) { 
+//     //   return null
+//     // } 
+//     debugger
+//     return (
+//         <div className='note-show-wrapper' >
+//           {/* <input onChange={() => {this.handleChange}} type='text' value={this.props.note.title}/> */}
+//           {/* <input onChange={this.handleChange('title')} type='text' value={this.state.title ? this.state.title : this.props.note.title}/>
+//           <input onChange={this.handleChange('body')}type='text' value={this.state.body ? this.state.body : this.props.note.body} /> */}
+//           <h1>hello</h1>
+//         </div>
+//     )
+//   }
+// }
 
 var NoteShow = /*#__PURE__*/function (_React$Component) {
   _inherits(NoteShow, _React$Component);
 
   var _super = _createSuper(NoteShow);
 
-  function NoteShow() {
+  function NoteShow(props) {
+    var _this;
+
     _classCallCheck(this, NoteShow);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      id: _this.props.noteId,
+      title: null,
+      body: null,
+      notebook_id: null
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(NoteShow, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      var _this2 = this;
+
+      return function (e) {
+        if (_this2.state.title === null) {
+          return _this2.setState({
+            title: _this2.props.notes[_this2.props.noteId]
+          });
+        } else {
+          return _this2.setState({
+            title: title
+          });
+        }
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
-      if (this.props.note === null) {
+      var _this$props = this.props,
+          notes = _this$props.notes,
+          noteId = _this$props.noteId;
+      var currentNote = notes[noteId]; // debugger
+
+      if (!notes || !noteId || !currentNote) {
         return null;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "note-edit"
-      }, this.props.note.title));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChange,
+        type: "text",
+        value: this.state.title
+      }));
     }
   }]);
 
@@ -1110,21 +1138,31 @@ var NoteShow = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _note_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./note_show */ "./frontend/components/home/notes/note_show.jsx");
+/* harmony import */ var _actions_note_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/note_actions */ "./frontend/actions/note_actions.js");
+/* harmony import */ var _note_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./note_show */ "./frontend/components/home/notes/note_show.jsx");
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
   // debugger
-  return {//  notes: state.entities.notes
+  var noteId = parseInt(ownProps.match.params.noteId);
+  var notes = state.entities.notes;
+  return {
+    noteId: noteId,
+    notes: notes
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    fetchNotes: function fetchNotes() {
+      return dispatch(Object(_actions_note_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNotes"])());
+    }
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_note_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_note_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1272,66 +1310,68 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(SideBar);
 
   function SideBar(props) {
-    var _this;
-
     _classCallCheck(this, SideBar);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      dropdown: false,
-      caret: false
-    }; // this.toggleListDropdown = this.toggleListDropdown.bind(this);
+    return _super.call(this, props); // this.state = {
+    //   dropdown: false,
+    //   caret: false
+    // };
+    // this.toggleListDropdown = this.toggleListDropdown.bind(this);
+  } // toggleListDropdown() {
+  //   if (!this.state.dropdown) {
+  //     this.setState({ dropdown: true })
+  //   } else {
+  //     this.setState({ dropdown: false })
+  //   }
+  // }
+  // toggleCaret() {
+  //   if (!this.state.caret) {
+  //     this.setState({ caret: true })
+  //   } else {
+  //     this.setState({ caret: false })
+  //   }
+  // }
 
-    return _this;
-  }
 
   _createClass(SideBar, [{
-    key: "toggleListDropdown",
-    value: function toggleListDropdown() {
-      if (!this.state.dropdown) {
-        this.setState({
-          dropdown: true
-        });
-      } else {
-        this.setState({
-          dropdown: false
-        });
-      }
-    }
-  }, {
-    key: "toggleCaret",
-    value: function toggleCaret() {
-      if (!this.state.caret) {
-        this.setState({
-          caret: true
-        });
-      } else {
-        this.setState({
-          caret: false
-        });
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
-      var caretClass = this.state.caret ? 'caret-down' : 'caret-right';
-      var dropdownClass = this.state.dropdown ? 'sidebar-list-open' : 'sidebar-list-hidden';
-      var caretIcon;
-
-      if (caretClass === 'caret-down') {
-        caretIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: caretClass
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-caret-down"
-        }));
-      } else {
-        caretIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: caretClass
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-caret-right"
-        }));
-      }
-
+      // let caretClass = this.state.caret ? 'caret-down' : 'caret-right';
+      // let dropdownClass = this.state.dropdown ? 'sidebar-list-open' : 'sidebar-list-hidden';
+      // let caretIcon;
+      // if (caretClass === 'caret-down') {
+      //   caretIcon = <div className={caretClass}><i className="fas fa-caret-down"></i></div>
+      // } else {
+      //   caretIcon = <div className={caretClass}><i className="fas fa-caret-right"></i></div>
+      // }
+      // return (
+      //   <div className='sidebar'>
+      //     <Greeting currentUser={this.props.currentUser} logout={this.props.logout} />
+      //     <div className='sidebar-lists'>
+      //       <div>
+      //         <Link className='sidebar-notes-link' to='/notes'>
+      //           <i className="fas fa-sticky-note"></i>
+      //           All Notes
+      //         </Link>
+      //       </div> 
+      //       <div className='sidebar-notebooks-text'>
+      //         {/* <div onClick={() => {
+      //                 this.toggleListDropdown();
+      //                 this.toggleCaret();
+      //         }}>
+      //         {caretIcon}
+      //         </div> */}
+      //         <Link className='sidebar-nb-link' to='/notebooks'>
+      //           <i className="fas fa-book"></i>
+      //           Notebooks
+      //         </Link>
+      //       </div>
+      //       {/* <div className={dropdownClass}>
+      //         <NotebookSidebar />
+      //       </div>   */}
+      //     </div>
+      //   </div>
+      // ) 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1339,21 +1379,17 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         logout: this.props.logout
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-lists"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "sidebar-notes-link",
         to: "/notes"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-sticky-note"
-      }), "All Notes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar-notebooks-text"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }), "All Notes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "sidebar-nb-link",
         to: "/notebooks"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-book"
-      }), "Notebooks")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: dropdownClass
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notebook_sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+      }), "Notebooks"))));
     }
   }]);
 
@@ -2590,18 +2626,20 @@ var noteReducer = function noteReducer() {
 /*!*************************************************!*\
   !*** ./frontend/reducers/note/note_selector.js ***!
   \*************************************************/
-/*! exports provided: makeNoteArr */
+/*! exports provided: makeNoteArr, findNote */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeNoteArr", function() { return makeNoteArr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findNote", function() { return findNote; });
 var makeNoteArr = function makeNoteArr(_ref) {
   var notes = _ref.notes;
   return Object.keys(notes).map(function (id) {
     return notes[id];
   });
 };
+var findNote = function findNote(noteId) {};
 
 /***/ }),
 

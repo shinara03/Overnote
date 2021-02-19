@@ -10,6 +10,7 @@ import NotebookIndexContainer from './home/notebooks/notebook_index_container';
 import Modal from './modal/modal';
 import NoteIndexContainer from './home/notes/note_index_container';
 import NotebookShowContainer from './home/notebooks/notebook_show_container';
+import NoteShowContainer from './home/notes/note_show_container';
 // import HomePage from './home/homepage';
 
 const App = () => {
@@ -22,12 +23,14 @@ const App = () => {
         <ProtectedRoute exact path='/notes' component={NoteIndexContainer} />
         <ProtectedRoute exact path='/notebooks' component={NotebookIndexContainer}/>
         <ProtectedRoute path='/notebooks/:notebookId' component={NotebookShowContainer} />
+        {/* <Route exact path='/notebooks/:notebookId/:noteId' component={NoteShow} /> */}
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
         <Route exact path="/404" component={ErrorPage} />
         <Redirect to='/404' />
       </Switch>
+      <ProtectedRoute path='/notebooks/:notebookId/:noteId' component={NoteShowContainer} /> 
     </>
   )
 }
