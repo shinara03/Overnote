@@ -1,6 +1,7 @@
 .notes-container {
   display: grid;
   grid-template-columns: 300px;
+  width: 670px;
   font-family: 'Barlow', sans-serif;
 }
 
@@ -9,7 +10,7 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 99px 1fr;
-  grid-template-columns: 370px 1fr;
+  grid-template-columns: 370px;
 }
 
 .notes-header {
@@ -78,4 +79,28 @@
 
 .note-show-link {
   text-decoration: none;
+}
+
+
+
+.note-edit-container {
+  position: absolute;
+  left: 672px;
+  bottom: 50px;
+  font-family: 'Barlow', sans-serif;
+  width: 600px;
+
+  h1 {
+    position: absolute;
+    bottom: 638px;
+    font-size: 36px;
+    margin-left: 40px;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 393px;
+    margin-left: 35px;
+    line-height: 1.6;
+  }
 }

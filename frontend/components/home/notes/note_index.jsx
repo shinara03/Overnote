@@ -20,7 +20,8 @@ class NoteIndex extends React.Component {
           <div className='notes-index'>
             {this.props.notes.map(note => {
               return (
-                <li key={note.id} className='notes-index-items'>
+                <li onClick={() => this.props.history.push(`/notes/${note.id}`)} 
+                key={note.id} className='notes-index-items'>
                   <div className='notes-content'> 
                     <div>
                       <h1>{note.title}</h1>

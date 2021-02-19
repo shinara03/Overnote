@@ -11,6 +11,7 @@ import Modal from './modal/modal';
 import NoteIndexContainer from './home/notes/note_index_container';
 import NotebookShowContainer from './home/notebooks/notebook_show_container';
 import NoteShowContainer from './home/notes/note_show_container';
+import NoteEditContainer from './home/notes/note_eidt_container';
 // import HomePage from './home/homepage';
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={NavBarContainer}/>
         {/* <ProtectedRoute exact path='/home' component={HomePage}/> */}
-        <ProtectedRoute exact path='/notes' component={NoteIndexContainer} />
+        <ProtectedRoute path='/notes' component={NoteIndexContainer} />
+        {/* <ProtectedRoute path='/notes/:noteId' component={NoteEditContainer} /> */}
         <ProtectedRoute exact path='/notebooks' component={NotebookIndexContainer}/>
         <ProtectedRoute path='/notebooks/:notebookId' component={NotebookShowContainer} />
         {/* <Route exact path='/notebooks/:notebookId/:noteId' component={NoteShow} /> */}
@@ -30,6 +32,8 @@ const App = () => {
         <Route exact path="/404" component={ErrorPage} />
         <Redirect to='/404' />
       </Switch>
+  
+      <ProtectedRoute path='/notes/:noteId' component={NoteEditContainer} />
       <ProtectedRoute path='/notebooks/:notebookId/:noteId' component={NoteShowContainer} /> 
     </>
   )

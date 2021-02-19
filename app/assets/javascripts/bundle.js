@@ -401,12 +401,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/notes/note_index_container */ "./frontend/components/home/notes/note_index_container.js");
 /* harmony import */ var _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/notebooks/notebook_show_container */ "./frontend/components/home/notebooks/notebook_show_container.js");
 /* harmony import */ var _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/notes/note_show_container */ "./frontend/components/home/notes/note_show_container.js");
+/* harmony import */ var _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/notes/note_eidt_container */ "./frontend/components/home/notes/note_eidt_container.js");
 
 
 
 
 
  // import SideBarContainer from './home/sidebar/sidebar_container';
+
 
 
 
@@ -421,7 +423,6 @@ var App = function App() {
     path: "/",
     component: _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
-    exact: true,
     path: "/notes",
     component: _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
@@ -446,6 +447,9 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/404"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+    path: "/notes/:noteId",
+    component: _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notebooks/:notebookId/:noteId",
     component: _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }));
@@ -494,7 +498,7 @@ var ErrorPage = function ErrorPage() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // import { Link } from 'react-router-dom';
+
 
 var Greeting = function Greeting(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -865,6 +869,142 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/home/notes/note_edit.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/home/notes/note_edit.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var NoteEdit = /*#__PURE__*/function (_React$Component) {
+  _inherits(NoteEdit, _React$Component);
+
+  var _super = _createSuper(NoteEdit);
+
+  function NoteEdit(props) {
+    var _this;
+
+    _classCallCheck(this, NoteEdit);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      id: null,
+      title: '',
+      body: '',
+      updated_at: new Date()
+    };
+    _this.saveState = _this.saveState.bind(_assertThisInitialized(_this)); // this.handleChange = this.handleChange.bind(this);
+
+    return _this;
+  }
+
+  _createClass(NoteEdit, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      // debugger
+      if (this.state.id === null || this.props.match.params.noteId !== prevProps.match.params.noteId) {
+        {
+          this.saveState();
+        }
+      }
+    }
+  }, {
+    key: "saveState",
+    value: function saveState() {
+      if (this.props.notes) {
+        this.setState(this.props.notes[this.props.noteId]);
+      }
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (!this.state.id) {
+        return null;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "note-edit-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.state.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.state.body));
+    }
+  }]);
+
+  return NoteEdit;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (NoteEdit);
+
+/***/ }),
+
+/***/ "./frontend/components/home/notes/note_eidt_container.js":
+/*!***************************************************************!*\
+  !*** ./frontend/components/home/notes/note_eidt_container.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _note_edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./note_edit */ "./frontend/components/home/notes/note_edit.jsx");
+/* harmony import */ var _actions_note_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/note_actions */ "./frontend/actions/note_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    noteId: parseInt(ownProps.match.params.noteId),
+    notes: state.entities.notes
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_note_edit__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/home/notes/note_index.jsx":
 /*!*******************************************************!*\
   !*** ./frontend/components/home/notes/note_index.jsx ***!
@@ -923,6 +1063,8 @@ var NoteIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notes-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -933,6 +1075,9 @@ var NoteIndex = /*#__PURE__*/function (_React$Component) {
         className: "notes-index"
       }, this.props.notes.map(function (note) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          onClick: function onClick() {
+            return _this.props.history.push("/notes/".concat(note.id));
+          },
           key: note.id,
           className: "notes-index-items"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
