@@ -452,7 +452,7 @@ var App = function App() {
     component: _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notebooks/:notebookId/:noteId",
-    component: _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }));
 };
 

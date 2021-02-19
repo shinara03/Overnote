@@ -77,7 +77,11 @@ note20 = Note.create({title: 'Note 11', body: "In ante metus dictum at tempor co
   Sem et tortor consequat id porta nibh venenatis cras sed. 
   Turpis in eu mi bibendum neque egestas. 
   Proin nibh nisl condimentum id venenatis a. 
-  Est lorem ipsum dolor sit amet consectetur. ", notebook_id: notebook2.id})
+  Est lorem ipsum dolor sit amet consectetur.
+  Tristique senectus et netus et malesuada. 
+  Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. 
+  Feugiat in ante metus dictum at tempor commodo ullamcorper.
+  Mi bibendum neque egestas congue quisque. ", notebook_id: notebook2.id})
   
 note21 = Note.create({title: 'Note 12', body: "Donec ultrices tincidunt arcu non sodales neque.
   Egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris. 
@@ -85,7 +89,11 @@ note21 = Note.create({title: 'Note 12', body: "Donec ultrices tincidunt arcu non
   Vitae et leo duis ut diam quam. Nullam non nisi est sit. 
   Convallis a cras semper auctor neque vitae tempus quam pellentesque. 
   Lorem ipsum dolor sit amet consectetur. Hendrerit dolor magna eget est lorem ipsum. 
-  Ullamcorper morbi tincidunt ornare massa.", notebook_id: notebook2.id})
+  Ullamcorper morbi tincidunt ornare massa.Tristique senectus et netus et malesuada. 
+  Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. 
+  Feugiat in ante metus dictum at tempor commodo ullamcorper.
+   Mi bibendum neque egestas congue quisque. Duis ut diam quam nulla. 
+   Volutpat diam ut venenat", notebook_id: notebook2.id})
 
 # Notes under notebook3
 

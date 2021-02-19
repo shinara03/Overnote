@@ -35,7 +35,9 @@ const App = () => {
       </Switch>
   
       <ProtectedRoute path='/notes/:noteId' component={NoteEditContainer} />
-      <ProtectedRoute path='/notebooks/:notebookId/:noteId' component={NoteShowContainer} /> 
+      {/* <ProtectedRoute path='/notebooks/:notebookId/:noteId' component={NoteShowContainer} />  */}
+      <ProtectedRoute path='/notebooks/:notebookId/:noteId' component={NoteEditContainer} /> 
+
     </>
   )
 }
