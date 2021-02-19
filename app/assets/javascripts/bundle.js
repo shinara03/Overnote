@@ -394,20 +394,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session/session_form/login_form_container */ "./frontend/components/session/session_form/login_form_container.js");
 /* harmony import */ var _session_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session/session_form/signup_form_container */ "./frontend/components/session/session_form/signup_form_container.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash/navbar/navbar_container */ "./frontend/components/splash/navbar/navbar_container.js");
-/* harmony import */ var _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./errorPage/error_page */ "./frontend/components/errorPage/error_page.jsx");
-/* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/notes/note_index_container */ "./frontend/components/home/notes/note_index_container.js");
-/* harmony import */ var _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/notebooks/notebook_show_container */ "./frontend/components/home/notebooks/notebook_show_container.js");
-/* harmony import */ var _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/notes/note_show_container */ "./frontend/components/home/notes/note_show_container.js");
-/* harmony import */ var _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/notes/note_eidt_container */ "./frontend/components/home/notes/note_eidt_container.js");
+/* harmony import */ var _errorPage_error_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./errorPage/error_page */ "./frontend/components/errorPage/error_page.jsx");
+/* harmony import */ var _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/notebooks/notebook_index_container */ "./frontend/components/home/notebooks/notebook_index_container.js");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/notes/note_index_container */ "./frontend/components/home/notes/note_index_container.js");
+/* harmony import */ var _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/notebooks/notebook_show_container */ "./frontend/components/home/notebooks/notebook_show_container.js");
+/* harmony import */ var _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/notes/note_show_container */ "./frontend/components/home/notes/note_show_container.js");
+/* harmony import */ var _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/notes/note_eidt_container */ "./frontend/components/home/notes/note_eidt_container.js");
+/* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
 
 
 
 
+ // import NavBarContainer from './splash/navbar/navbar_container';
+// import SideBarContainer from './home/sidebar/sidebar_container';
 
- // import SideBarContainer from './home/sidebar/sidebar_container';
 
 
 
@@ -418,20 +419,20 @@ __webpack_require__.r(__webpack_exports__);
  // import HomePage from './home/homepage';
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _splash_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _splash_splash__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notes",
-    component: _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _home_notes_note_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     exact: true,
     path: "/notebooks",
-    component: _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _home_notebooks_notebook_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notebooks/:notebookId",
-    component: _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _home_notebooks_notebook_show_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["AuthRoute"], {
     exact: true,
     path: "/login",
@@ -443,15 +444,15 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/404",
-    component: _errorPage_error_page__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _errorPage_error_page__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/404"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notes/:noteId",
-    component: _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _home_notes_note_eidt_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
     path: "/notebooks/:notebookId/:noteId",
-    component: _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _home_notes_note_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   }));
 };
 
@@ -2560,6 +2561,40 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps)(_navbar__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/splash/splash.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar/navbar_container */ "./frontend/components/splash/navbar/navbar_container.js");
+
+
+
+var Splash = function Splash() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-text-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Accomplish more with better notes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Overnote helps you capture ideas and find them fast")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-text2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "splash-img",
+    src: window.homePageURL
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Take notes anywhere. Express yourself with formatting tools that help you write how you think. Keep important info handy with Overnote"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 

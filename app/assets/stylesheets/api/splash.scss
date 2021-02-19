@@ -1,0 +1,94 @@
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  padding: 0 10%;
+  font-family: Arial, Hevetica, sans-seif;
+  position: fixed;
+  background: white;
+  box-sizing: border-box;
+}
+
+.navBar-logo{
+  display: flex;
+  flex-direction: row;
+  // border: 1px solid pink;
+  align-self: center;
+  text-decoration: none;
+  color: black;
+
+  
+  h1 {
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+}
+
+.navBar-oct {
+  width: 45px;
+  height: 45px;
+}
+
+.navBar-redirect{
+  align-self: center;
+}
+.navBar-link {
+  text-decoration: none;
+  color: black;
+
+  margin: 5px 5px;
+}
+
+.navBar-link:hover {
+  color: #00a82d;
+}
+
+
+.splash-wrapper {
+  display: grid;
+  grid-template-rows: 80px;
+  height: 100vh;
+
+}
+
+.splash-text-wrapper{
+  grid-row: 2;
+  background: white;
+  font-family: 'Barlow', sans-serif;
+}
+
+.splash-text {
+  text-align: center;
+  margin-top: 102px;
+
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 20px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin: 10px;
+  }
+}
+
+.splash-text2 {
+  margin: 40px 210px;
+  display: flex;
+
+  h2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 65px 0px;
+    width: 287px;
+  }
+}
+
+
+.splash-img {
+  width: 650px;
+}
