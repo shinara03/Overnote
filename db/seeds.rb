@@ -47,10 +47,9 @@ note3 = Note.create({title: 'Note 3', body: "Feugiat nisl pretium fusce id velit
   Nunc faucibus a pellentesque sit amet porttitor eget dolor.
   Magna etiam tempor orci eu lobortis elementum. Dictum fusce ut placerat orci. 
   Facilisi cras fermentum odio eu feugiat pretium. 
-  In ante metus dictum at tempor commodo. 
-  Massa vitae tortor condimentum lacinia quis vel eros donec.", notebook_id: notebook1.id})
+  In ante metus dictum at tempor commodo.", notebook_id: notebook1.id})
 
-note4 = Note.create({title: 'Note4', body: "Adipiscing diam donec adipiscing tristique. 
+note4 = Note.create({title: 'Note 4', body: "Adipiscing diam donec adipiscing tristique. 
   Sollicitudin aliquam ultrices sagittis orci a scelerisque.
   Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. 
   Amet massa vitae tortor condimentum. Fringilla urna porttitor rhoncus dolor purus. 
@@ -58,16 +57,15 @@ note4 = Note.create({title: 'Note4', body: "Adipiscing diam donec adipiscing tri
   Aliquet bibendum enim facilisis gravida neque. 
   In fermentum posuere urna nec tincidunt praesent semper feugiat nibh.Mi proin sed libero enim sed faucibus.
   Lectus nulla at volutpat diam ut venenatis tellus.
-  Ante in nibh mauris cursus. Nunc sed augue lacus viverra vitae congue eu consequat.
-  Auctor urna nunc id cursus metus aliquam eleifend.", notebook_id: notebook1.id})
+  Ante in nibh mauris cursus. Nunc sed augue lacus viverra vitae congue eu consequat.", notebook_id: notebook1.id})
 
-note5 = Note.create({title: 'Note5', body: 'note 5 body', notebook_id: notebook1.id})
-note6 = Note.create({title: 'Note6', body: 'note 6 body', notebook_id: notebook1.id})
-note7 = Note.create({title: 'Note7', body: 'note 7 body', notebook_id: notebook1.id})
-note8 = Note.create({title: 'Note8', body: 'note 8 body', notebook_id: notebook1.id})
-note9 = Note.create({title: 'Note9', body: 'note 9 body', notebook_id: notebook1.id})
+note5 = Note.create({title: 'Note 5', body: 'note 5 body', notebook_id: notebook1.id})
+note6 = Note.create({title: 'Note 6', body: 'note 6 body', notebook_id: notebook1.id})
+note7 = Note.create({title: 'Note 7', body: 'note 7 body', notebook_id: notebook1.id})
+note8 = Note.create({title: 'Note 8', body: 'note 8 body', notebook_id: notebook1.id})
+note9 = Note.create({title: 'Note 9', body: 'note 9 body', notebook_id: notebook1.id})
 
-note10 = Note.create({title: 'Note10', 
+note10 = Note.create({title: 'Note 10', 
   body: "Spending time at national parks can be an exciting adventure, but this wasn't the type of excitement she was hoping to experience.
    As she contemplated the situation she found herself in, she knew she'd gotten herself in a little more than she bargained for. 
    It wasn't often that she found herself in a tree staring down at a pack of wolves that were looking to make her their next meal.", notebook_id: notebook1.id})
@@ -105,4 +103,8 @@ note22 = Note.create({title: 'Note 13', body: "Dui id ornare arcu odio ut sem nu
   Nunc sed augue lacus viverra vitae congue eu. 
   Elementum pulvinar etiam non quam lacus suspendisse. 
   Mi eget mauris pharetra et ultrices neque. 
-  Nunc sed velit dignissim sodales ut eu sem integer vitae", notebook_id: notebook3.id})
+  Nunc sed velit dignissim sodales ut eu sem integer vitae.
+  Scelerisque in dictum non consectetur a erat nam. 
+  Feugiat in ante metus dictum at tempor commodo ullamcorper. 
+  Magna etiam tempor orci eu lobortis elementum nibh tellus. 
+  Urna et pharetra pharetra massa.", notebook_id: notebook3.id})
