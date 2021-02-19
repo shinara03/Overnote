@@ -24,7 +24,7 @@ class NotebookShow extends React.Component {
   
   render() {
 
-    if(!this.props.notes) {return null;}
+    if(!this.props.notebookId || !this.props.notebook || !this.props.notes) {return null;}
 
     return (
       <div className="nb-show-container">

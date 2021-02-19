@@ -781,7 +781,7 @@ var NotebookShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      if (!this.props.notes) {
+      if (!this.props.notebookId || !this.props.notebook || !this.props.notes) {
         return null;
       }
 
