@@ -93,7 +93,9 @@ note21 = Note.create({title: 'Note 12', body: "Donec ultrices tincidunt arcu non
   Nunc aliquet bibendum enim facilisis gravida neque convallis. 
   Vitae et leo duis ut diam quam. Nullam non nisi est sit. 
   Convallis a cras semper auctor neque vitae tempus quam pellentesque. 
-  Lorem ipsum dolor sit amet consectetur. Hendrerit dolor magna eget est lorem ipsum.", notebook_id: notebook2.id})
+  Lorem ipsum dolor sit amet consectetur. Hendrerit dolor magna eget est lorem ipsum.
+  Magna fermentum iaculis eu non diam phasellus vestibulum. Feugiat in fermentum posuere urna nec tincidunt praesent semper. 
+  Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.", notebook_id: notebook2.id})
 
 # Notes under notebook3
 
